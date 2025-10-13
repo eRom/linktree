@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://linktree.romainecarnot.com/sitemap.xml
+Sitemap: https://www.romain-ecarnot.com/sitemap.xml
 
 # Optimisations SEO
 Crawl-delay: 1

@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://linktree.romainecarnot.com",
+    url: "https://www.romain-ecarnot.com",
     title: "Romain Ecarnot - Architecte Cloud & Développeur",
     description:
       "Romain Ecarnot, architecte cloud & développeur. Engagé dans la reprise professionnelle après un AVC, il met son expertise au service de la tech et de la santé digitale.",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://linktree.romainecarnot.com",
+    canonical: "https://www.romain-ecarnot.com",
   },
   verification: {
     google: "your-google-verification-code",
@@ -98,7 +98,7 @@ export default function RootLayout({
               jobTitle: "Architecte Cloud & Développeur",
               description:
                 "Architecte cloud et développeur engagé dans la reprise professionnelle après un AVC, mettant son expertise au service de la tech et de la santé digitale.",
-              url: "https://linktree.romainecarnot.com",
+              url: "https://www.romain-ecarnot.com",
               image:
                 "https://avatars.githubusercontent.com/u/146684?s=400&u=66a228f8030e491a4115a4e6b2f06eceb03a7f6a&v=4",
               sameAs: [
