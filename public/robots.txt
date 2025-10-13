@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://linktree.romainecarnot.com/sitemap.xml
+
+# Optimisations SEO
+Crawl-delay: 1
+
+# Interdictions spécifiques (si nécessaire)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Autoriser tous les robots pour le contenu public
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
