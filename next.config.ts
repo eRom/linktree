@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'dev.healthincloud.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'fr.tipeee.com',
+      },
     ],
   },
 };
