@@ -3,7 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -28,10 +32,17 @@ export default function Home() {
         "Connectez-vous avec moi sur LinkedIn pour découvrir mon parcours professionnel",
     },
     {
+      name: "X (Twitter)",
+      url: "https://x.com/CloudinNantes",
+      icon: faXTwitter,
+      color: "bg-[#000000] hover:bg-[#1a1a1a] focus:bg-[#1a1a1a]",
+      description: "Suivez-moi sur X pour mes actualités tech et cloud",
+    },
+    {
       name: "GitHub",
       url: "https://github.com/eRom",
       icon: faGithub,
-      color: "bg-[#333333] hover:bg-[#1a1a1a] focus:bg-[#1a1a1a]",
+      color: "bg-[#555555] hover:bg-[#444444] focus:bg-[#444444]",
       description:
         "Découvrez mes projets de développement et contributions open source",
     },
