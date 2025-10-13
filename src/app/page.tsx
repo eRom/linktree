@@ -47,7 +47,7 @@ export default function Home() {
       name: "Tipeee",
       url: "https://fr.tipeee.com/rebondir-apres-lavc-ma-carriere-dans-la-tech/",
       icon: faStarOfLife,
-      color: "bg-[#ff6854] hover:bg-[#e5523a] focus:bg-[#e5523a]",
+      color: "bg-[#E93854] hover:bg-[#C62F47] focus:bg-[#BA2C43]",
       description: "Soutenez mon projet de reprise professionnelle après l'AVC",
     },
   ];
