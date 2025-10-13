@@ -130,6 +130,12 @@ export default function RootLayout({
           }}
         />
 
+        {/* Google Search Console Verification */}
+        <meta
+          name="google-site-verification"
+          content="IEOR1xYofoX9wNR1O31-PSF9hK__8p-OpojAVz7O4JQ"
+        />
+
         {/* Additional SEO Meta Tags */}
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
