@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import TipeeeIcon from "@/components/TipeeeIcon";
 
 type LinkItem = {
   name: string;
@@ -14,7 +14,7 @@ type LinkItem = {
   color: string;
   icon?: IconDefinition;
   customIcon?: string;
-  useTipeeeIcon?: boolean;
+  description?: string;
 };
 
 export default function Home() {
@@ -23,99 +23,138 @@ export default function Home() {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/romainecarnot/",
       icon: faLinkedin,
-      color: "bg-[#0077B5] hover:bg-[#005885]",
+      color: "bg-[#0077B5] hover:bg-[#005885] focus:bg-[#005885]",
+      description:
+        "Connectez-vous avec moi sur LinkedIn pour découvrir mon parcours professionnel",
     },
     {
-      name: "Github",
+      name: "GitHub",
       url: "https://github.com/eRom",
       icon: faGithub,
-      color: "bg-[#333333] hover:bg-[#1a1a1a]",
+      color: "bg-[#333333] hover:bg-[#1a1a1a] focus:bg-[#1a1a1a]",
+      description:
+        "Découvrez mes projets de développement et contributions open source",
     },
     {
-      name: "Health in Cloud",
-      url: "https://www.healthincloud.app",
+      name: "Health In Cloud",
+      url: "https://www.healthincloud.app/",
       customIcon: "https://dev.healthincloud.app/icon-512.png",
-      color: "bg-[#ad46ff] hover:bg-[#9333ea]",
+      color: "bg-[#ad46ff] hover:bg-[#9333ea] focus:bg-[#9333ea]",
+      description:
+        "Mon projet de santé digitale et solutions cloud pour le secteur médical",
     },
     {
       name: "Tipeee",
       url: "https://fr.tipeee.com/rebondir-apres-lavc-ma-carriere-dans-la-tech/",
-      useTipeeeIcon: true,
-      color: "bg-[#ff6854] hover:bg-[#e5523a]",
+      icon: faStarOfLife,
+      color: "bg-[#ff6854] hover:bg-[#e5523a] focus:bg-[#e5523a]",
+      description: "Soutenez mon projet de reprise professionnelle après l'AVC",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-start justify-center p-8 pt-20">
-      <div className="w-full max-w-2xl">
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-start justify-center p-4 sm:p-8 pt-16 sm:pt-20">
+      <main className="w-full max-w-2xl" role="main">
         {/* Profile Section */}
-        <div className="flex flex-col md:flex-row items-center md:items-center gap-6 mb-8">
+        <header className="flex flex-col md:flex-row items-center md:items-center gap-6 mb-8">
           <div className="relative w-32 h-32 flex-shrink-0">
             <Image
               src="https://avatars.githubusercontent.com/u/146684?s=400&u=66a228f8030e491a4115a4e6b2f06eceb03a7f6a&v=4"
-              alt="Romain Ecarnot"
+              alt="Photo de profil de Romain Ecarnot, architecte cloud et développeur"
               fill
-              sizes="128px"
+              sizes="(max-width: 768px) 128px, 128px"
               className="rounded-full object-cover border-4 border-white shadow-2xl"
               priority
             />
           </div>
-          <div className="flex flex-col items-center md:items-start">
-            <h1 className="text-3xl font-bold text-white mb-2 text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               Romain Ecarnot
             </h1>
-            <p className="text-xl text-white/90 font-medium text-center md:text-left">
-              Architecte et développeur.
-              <br />
-              Sur la route post-AVC dans la tech.
+            <p className="text-lg sm:text-xl text-white/90 font-medium mb-2">
+              Architecte Cloud & Développeur
+            </p>
+            <p className="text-base sm:text-lg text-white/80 max-w-md ">
+              - Engagé dans la reprise professionnelle après un AVC -
             </p>
           </div>
-        </div>
+        </header>
 
         {/* Links Section */}
-        <div className="flex flex-col gap-4">
-          {links.map((link) => (
+        <nav
+          className="flex flex-col gap-4"
+          role="navigation"
+          aria-label="Liens principaux"
+        >
+          {links.map((link, index) => (
             <a
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block"
+              className="block focus:outline-none focus:ring-4 focus:ring-white/30 focus:rounded-lg"
+              aria-label={`${link.name} - ${link.description}`}
+              tabIndex={0}
             >
-              <Card className="p-0 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <Card className="p-0 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl focus-within:scale-105 focus-within:shadow-2xl">
                 <Button
                   variant="ghost"
-                  className={`w-full h-16 text-lg font-semibold flex items-center justify-center gap-4 text-white hover:text-white ${link.color} transition-colors duration-300`}
+                  className={`w-full h-16 sm:h-18 text-base sm:text-lg font-semibold flex items-center justify-center gap-4 text-white hover:text-white focus:text-white ${link.color} transition-all duration-300 focus:outline-none`}
+                  role="button"
+                  aria-describedby={`link-description-${index}`}
                 >
-                  {link.useTipeeeIcon ? (
-                    <TipeeeIcon className="w-6 h-6" />
-                  ) : link.customIcon ? (
-                    <div className="relative w-6 h-6">
+                  {link.customIcon ? (
+                    <div className="relative w-6 h-6 flex-shrink-0">
                       <Image
                         src={link.customIcon}
-                        alt={link.name}
+                        alt={`Icône ${link.name}`}
                         fill
                         sizes="24px"
                         className="object-contain"
+                        aria-hidden="true"
                       />
                     </div>
                   ) : link.icon ? (
-                    <FontAwesomeIcon icon={link.icon} className="w-6 h-6" />
+                    <FontAwesomeIcon
+                      icon={link.icon}
+                      className="w-6 h-6 flex-shrink-0"
+                      aria-hidden="true"
+                    />
                   ) : null}
-                  <span>{link.name}</span>
+                  <span className="truncate">{link.name}</span>
                 </Button>
+                <div id={`link-description-${index}`} className="sr-only">
+                  {link.description}
+                </div>
               </Card>
             </a>
           ))}
-        </div>
+        </nav>
+
+        {/* Additional Info Section */}
+        <section className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+          <h2 className="text-lg font-semibold text-white mb-3 text-center">
+            Mon Parcours
+          </h2>
+          <p className="text-white/90 text-center leading-relaxed">
+            Après un AVC qui a bouleversé ma vie, j&apos;ai choisi de
+            transformer cette épreuve en opportunité. Aujourd&apos;hui, je
+            combine mon expertise technique en architecture cloud avec ma
+            passion pour la santé digitale, créant des solutions innovantes qui
+            font la différence.
+          </p>
+        </section>
 
         {/* Footer */}
-        <div className="mt-12 text-center">
+        <footer className="mt-12 text-center" role="contentinfo">
           <p className="text-white/70 text-sm">
-            © 2025 Romain Ecarnot. All rights reserved.
+            © 2025 Romain Ecarnot. Tous droits réservés.
           </p>
-        </div>
-      </div>
+          <p className="text-white/60 text-xs mt-2">
+            Développé avec ❤️ et Next.js
+          </p>
+        </footer>
+      </main>
     </div>
   );
 }
