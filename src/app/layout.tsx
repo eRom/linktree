@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     canonical: "https://www.romain-ecarnot.com",
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "IEOR1xYofoX9wNR1O31-PSF9hK__8p-OpojAVz7O4JQ",
   },
 };
 
