@@ -26,6 +26,14 @@ type LinkItem = {
 export default function Home() {
   const links: LinkItem[] = [
     {
+      name: "Health In Cloud",
+      url: "https://www.healthincloud.app/",
+      customIcon: "https://dev.healthincloud.app/icon-512.png",
+      color: "bg-[#ad46ff] hover:bg-[#9333ea] focus:bg-[#9333ea]",
+      description:
+        "Mon projet de santé digitale et solutions cloud pour le secteur médical",
+    },
+    {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/romainecarnot/",
       icon: faLinkedin,
@@ -44,7 +52,8 @@ export default function Home() {
       name: "Instagram",
       url: "https://www.instagram.com/cloudinnantes/",
       icon: faInstagram,
-      color: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:opacity-90 focus:opacity-90",
+      color:
+        "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:opacity-90 focus:opacity-90",
       description: "Découvrez mon univers en images sur Instagram",
     },
     {
@@ -62,14 +71,7 @@ export default function Home() {
       description:
         "Découvrez mes projets de développement et contributions open source",
     },
-    {
-      name: "Health In Cloud",
-      url: "https://www.healthincloud.app/",
-      customIcon: "https://dev.healthincloud.app/icon-512.png",
-      color: "bg-[#ad46ff] hover:bg-[#9333ea] focus:bg-[#9333ea]",
-      description:
-        "Mon projet de santé digitale et solutions cloud pour le secteur médical",
-    },
+
     {
       name: "Tipeee",
       url: "https://fr.tipeee.com/rebondir-apres-lavc-ma-carriere-dans-la-tech/",
