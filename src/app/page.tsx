@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
+  faFacebook,
   faGithub,
+  faInstagram,
   faLinkedin,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
@@ -30,6 +32,20 @@ export default function Home() {
       color: "bg-[#0077B5] hover:bg-[#005885] focus:bg-[#005885]",
       description:
         "Connectez-vous avec moi sur LinkedIn pour découvrir mon parcours professionnel",
+    },
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/romain.ecarnot/",
+      icon: faFacebook,
+      color: "bg-[#1877F2] hover:bg-[#0C5BBE] focus:bg-[#0C5BBE]",
+      description: "Rejoignez-moi sur Facebook pour suivre mon quotidien",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/cloudinnantes/",
+      icon: faInstagram,
+      color: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:opacity-90 focus:opacity-90",
+      description: "Découvrez mon univers en images sur Instagram",
     },
     {
       name: "X (Twitter)",
