@@ -4,13 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
-  faFacebook,
   faGithub,
   faInstagram,
   faLinkedin,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
+import { faFileAlt, faStarOfLife } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
@@ -26,6 +25,14 @@ type LinkItem = {
 export default function Home() {
   const links: LinkItem[] = [
     {
+      name: "Mon CV",
+      url: "https://cv.romain-ecarnot.com/",
+      icon: faFileAlt,
+      color: "bg-[#2563eb] hover:bg-[#1d4ed8] focus:bg-[#1d4ed8]",
+      description:
+        "Téléchargez mon CV complet et découvrez mon parcours professionnel",
+    },
+    {
       name: "Health In Cloud",
       url: "https://www.healthincloud.app/",
       customIcon: "https://dev.healthincloud.app/icon-512.png",
@@ -40,13 +47,6 @@ export default function Home() {
       color: "bg-[#0077B5] hover:bg-[#005885] focus:bg-[#005885]",
       description:
         "Connectez-vous avec moi sur LinkedIn pour découvrir mon parcours professionnel",
-    },
-    {
-      name: "Facebook",
-      url: "https://www.facebook.com/romain.ecarnot/",
-      icon: faFacebook,
-      color: "bg-[#1877F2] hover:bg-[#0C5BBE] focus:bg-[#0C5BBE]",
-      description: "Rejoignez-moi sur Facebook pour suivre mon quotidien",
     },
     {
       name: "Instagram",
@@ -188,8 +188,8 @@ export default function Home() {
               className="underline hover:text-white/80 transition-colors"
             >
               Next.js
-            </a>
-            {" "}/ {" "}
+            </a>{" "}
+            /{" "}
             <a
               href="https://cursor.sh"
               target="_blank"
