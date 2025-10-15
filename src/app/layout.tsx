@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Romain Ecarnot Linktree",
     images: [
       {
-        url: "https://avatars.githubusercontent.com/u/146684?s=400&u=66a228f8030e491a4115a4e6b2f06eceb03a7f6a&v=4",
+        url: "https://www.romain-ecarnot.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Romain Ecarnot - Architecte Cloud & Développeur",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     description:
       "Romain Ecarnot, architecte cloud & développeur. Engagé dans la reprise professionnelle après un AVC, il met son expertise au service de la tech et de la santé digitale.",
     images: [
-      "https://avatars.githubusercontent.com/u/146684?s=400&u=66a228f8030e491a4115a4e6b2f06eceb03a7f6a&v=4",
+      "https://www.romain-ecarnot.com/og-image.jpg",
     ],
   },
   alternates: {
@@ -150,11 +150,14 @@ export default function RootLayout({
 
         {/* Favicon & Icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" sizes="192x192" href="/icon-192.png" />
         <link rel="icon" sizes="512x512" href="/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
