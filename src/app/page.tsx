@@ -180,7 +180,24 @@ export default function Home() {
             © 2025 Romain Ecarnot. Tous droits réservés.
           </p>
           <p className="text-white/60 text-xs mt-2">
-            Développé avec ❤️ et Next.js
+            Développé avec ❤️ et{" "}
+            <a
+              href="https://nextjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white/80 transition-colors"
+            >
+              Next.js
+            </a>
+            {" "}/ {" "}
+            <a
+              href="https://cursor.sh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white/80 transition-colors"
+            >
+              Cursor
+            </a>
           </p>
         </footer>
       </main>
