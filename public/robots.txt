@@ -1,22 +1,30 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.romain-ecarnot.com/sitemap.xml
+# Moteurs de recherche IA & Agents génératifs
+User-agent: GPTBot
+Allow: /
 
-# Optimisations SEO
-Crawl-delay: 1
+User-agent: ChatGPT-User
+Allow: /
 
-# Interdictions spécifiques (si nécessaire)
-# Disallow: /admin/
-# Disallow: /private/
+User-agent: ClaudeBot
+Allow: /
 
-# Autoriser tous les robots pour le contenu public
-User-agent: Googlebot
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Slurp
+User-agent: Googlebot
 Allow: /
+
+# Sitemap
+Sitemap: https://www.romain-ecarnot.com/sitemap.xml

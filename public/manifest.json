@@ -1,11 +1,11 @@
 {
   "name": "Romain Ecarnot - Linktree",
   "short_name": "Romain Ecarnot",
-  "description": "Architecte Cloud & Développeur - Reprise professionnelle après AVC",
+  "description": "Romain Ecarnot - Passeur du numérique & Architecte du simple",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#3b82f6",
-  "theme_color": "#3b82f6",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
   "orientation": "portrait",
   "icons": [
     {
