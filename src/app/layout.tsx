@@ -185,6 +185,13 @@ export default function RootLayout({
         <link rel="icon" sizes="192x192" href="/icon-192.png" />
         <link rel="icon" sizes="512x512" href="/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* AI Discovery & Catalog (RFC 8615 / ai-catalog.io) */}
+        <link
+          rel="ai-catalog"
+          href="/.well-known/ai-catalog.json"
+          type="application/ai-catalog+json"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

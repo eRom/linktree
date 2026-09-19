@@ -1,0 +1,47 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Romain Ecarnot",
+    "identifier": "did:web:romain-ecarnot.com",
+    "documentationUrl": "https://www.romain-ecarnot.com/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:romain-ecarnot.com:profile:llms",
+      "displayName": "Romain Ecarnot - Profil & Connaissances IA",
+      "type": "application/agent-skills+md",
+      "description": "Philosophie anti-overkill, compétences et offre d'accompagnement aux usages du numérique et de l'IA.",
+      "url": "https://www.romain-ecarnot.com/llms.txt",
+      "tags": [
+        "profile",
+        "ai-accompaniment",
+        "anti-overkill",
+        "cloud-architecture"
+      ]
+    },
+    {
+      "identifier": "urn:air:romain-ecarnot.com:cv:interactive",
+      "displayName": "Curriculum Vitae interactif",
+      "type": "text/html",
+      "description": "Parcours complet, réalisations techniques et compétences clés.",
+      "url": "https://cv.romain-ecarnot.com/",
+      "tags": [
+        "cv",
+        "resume",
+        "experience"
+      ]
+    },
+    {
+      "identifier": "urn:air:romain-ecarnot.com:code:github",
+      "displayName": "Dépôts et contributions Open Source",
+      "type": "text/html",
+      "description": "Dépôts de code, architecture logicielle et expérimentations open source.",
+      "url": "https://github.com/eRom",
+      "tags": [
+        "code",
+        "github",
+        "open-source"
+      ]
+    }
+  ]
+}
