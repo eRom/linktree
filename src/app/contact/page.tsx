@@ -138,13 +138,13 @@ export default function ContactPage() {
         {/* Profile Header */}
         <header className="flex flex-col items-center text-center gap-4">
           <div className="relative">
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 ring-1 ring-zinc-800 bg-zinc-900/60 shadow-2xl shadow-black/60">
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 ring-1 ring-zinc-800 bg-zinc-900/60 shadow-2xl shadow-black/60 overflow-hidden">
               <Image
                 src="/avatar.jpg"
                 alt="Photo de profil de Romain Ecarnot"
-                fill
-                sizes="96px"
-                className="rounded-full object-cover"
+                width={96}
+                height={96}
+                className="w-full h-full rounded-full object-cover"
                 priority
               />
             </div>

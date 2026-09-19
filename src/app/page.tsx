@@ -84,13 +84,13 @@ export default function Home() {
         {/* Profile Header */}
         <header className="flex flex-col items-center text-center gap-4">
           <div className="relative">
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 ring-1 ring-zinc-800 bg-zinc-900/60 shadow-2xl shadow-black/60">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 ring-1 ring-zinc-800 bg-zinc-900/60 shadow-2xl shadow-black/60 overflow-hidden">
               <Image
                 src="/avatar.jpg"
                 alt="Photo de profil de Romain Ecarnot"
-                fill
-                sizes="(max-width: 640px) 96px, 112px"
-                className="rounded-full object-cover"
+                width={112}
+                height={112}
+                className="w-full h-full rounded-full object-cover"
                 priority
               />
             </div>
