@@ -3,6 +3,7 @@ const KEY = "e8c4a90f1d7b4256a938c11e74f329de";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const URL_LIST = [
   `https://${HOST}/`,
+  `https://${HOST}/contact`,
 ];
 
 async function submitIndexNow() {

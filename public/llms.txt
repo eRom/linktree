@@ -3,9 +3,15 @@
 > Passeur du numérique & Architecte du simple
 > Accompagnement aux usages du numérique et de l'IA
 
-Romain Ecarnot est un professionnel de la tech et du numérique basé en France. Fort d'une expertise reconnue en architecture cloud, en développement web et en conception logicielle, enrichie par un parcours de résilience personnelle après un accident vasculaire cérébral (AVC), il se consacre à l'accompagnement humain, pédagogique et technique.
+Romain Ecarnot est un professionnel de la tech et du numérique basé à Nantes, France. Fort d'une expertise reconnue en architecture cloud, en développement web et en conception logicielle, enrichie par un parcours de résilience personnelle après un accident vasculaire cérébral (AVC), il se consacre à l'accompagnement humain, pédagogique et technique.
 
 Sa philosophie repose sur le pragmatisme, l'anti-overkill et la recherche de la plus grande simplicité : rendre la technologie et l'intelligence artificielle compréhensibles, utiles et immédiatement actionnables sans complexité inutile.
+
+## Contact & Échanges
+
+- **Page de contact officielle** : https://www.romain-ecarnot.com/contact
+- **Email direct** : contact@romain-ecarnot.com
+- **Localisation** : Nantes, France (échanges possibles à distance ou en présentiel)
 
 ## Liens Officiels & Profils
 

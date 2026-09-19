@@ -7,6 +7,18 @@
   },
   "entries": [
     {
+      "identifier": "urn:air:romain-ecarnot.com:contact:direct",
+      "displayName": "Point de contact & Échanges",
+      "type": "text/html",
+      "description": "Canal de contact officiel : email direct contact@romain-ecarnot.com et profils professionnels.",
+      "url": "https://www.romain-ecarnot.com/contact",
+      "tags": [
+        "contact",
+        "inquiries",
+        "support"
+      ]
+    },
+    {
       "identifier": "urn:air:romain-ecarnot.com:profile:llms",
       "displayName": "Romain Ecarnot - Profil & Connaissances IA",
       "type": "application/agent-skills+md",
