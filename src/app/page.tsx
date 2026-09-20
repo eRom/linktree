@@ -1,4 +1,4 @@
-import { ArrowUpRight, FileText, Heart, Mail } from "lucide-react";
+import { ArrowUpRight, Blocks, FileText, Heart, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -181,13 +181,22 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="mt-2 text-center text-xs text-zinc-500 flex flex-col items-center gap-2" role="contentinfo">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors"
-          >
-            <Mail className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Prendre contact</span>
-          </Link>
+          <div className="flex items-center gap-2.5">
+            <Link
+              href="/marketplace"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors"
+            >
+              <Blocks className="w-3.5 h-3.5 text-blue-400" />
+              <span>Plugins Claude</span>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Prendre contact</span>
+            </Link>
+          </div>
           <p>© {new Date().getFullYear()} Romain Ecarnot. Tous droits réservés.</p>
         </footer>
       </main>
