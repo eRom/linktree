@@ -16,6 +16,11 @@
         "contact",
         "inquiries",
         "support"
+      ],
+      "representativeQueries": [
+        "comment contacter Romain Ecarnot",
+        "qui peut m'accompagner sur l'IA générative à Nantes",
+        "demander un accompagnement aux usages du numérique"
       ]
     },
     {
@@ -29,6 +34,12 @@
         "ai-accompaniment",
         "anti-overkill",
         "cloud-architecture"
+      ],
+      "representativeQueries": [
+        "qui est Romain Ecarnot",
+        "accompagnement à l'IA générative pour une équipe non technique",
+        "architecte logiciel qui prône la simplicité plutôt que l'over-engineering",
+        "quelqu'un qui vulgarise l'IA sans jargon"
       ]
     },
     {
@@ -45,6 +56,13 @@
         "orchestration",
         "developer-tools",
         "llm"
+      ],
+      "representativeQueries": [
+        "quels plugins existent pour Claude Code",
+        "comment orchestrer plusieurs agents IA dans Claude Code",
+        "Claude Code plugins for multi-agent orchestration",
+        "plugin Claude Code pour auditer le SEO d'un site",
+        "comment ajouter une marketplace de plugins dans Claude Code"
       ]
     },
     {
@@ -57,6 +75,11 @@
         "cv",
         "resume",
         "experience"
+      ],
+      "representativeQueries": [
+        "parcours professionnel de Romain Ecarnot",
+        "son expérience en architecture cloud et développement web",
+        "reprise de carrière dans la tech après un AVC"
       ]
     },
     {
@@ -69,6 +92,11 @@
         "code",
         "github",
         "open-source"
+      ],
+      "representativeQueries": [
+        "dépôts open source de Romain Ecarnot",
+        "code source des plugins eRom pour Claude Code",
+        "eRom GitHub repositories"
       ]
     }
   ]
