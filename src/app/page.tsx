@@ -9,6 +9,7 @@ type LinkItem = {
   icon: React.ReactNode;
   badge?: string;
   highlight?: boolean;
+  isInternal?: boolean;
 };
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -52,16 +53,24 @@ export default function Home() {
       highlight: true,
     },
     {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/romainecarnot/",
-      description: "Réseau professionnel & parcours détaillé",
-      icon: <LinkedInIcon className="w-5 h-5 transition-colors group-hover:text-[#0a66c2]" />,
+      name: "Plugins Claude Code",
+      url: "/claude-marketplace",
+      description: "Marketplace officielle : 9 plugins & skills pour Claude Code",
+      icon: <Blocks className="w-5 h-5 transition-colors group-hover:text-amber-400" />,
+      badge: "9 plugins",
+      isInternal: true,
     },
     {
       name: "GitHub",
       url: "https://github.com/eRom",
       description: "Projets, dépôts de code & contributions",
       icon: <GitHubIcon className="w-5 h-5 transition-colors group-hover:text-zinc-100" />,
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/romainecarnot/",
+      description: "Réseau professionnel & parcours détaillé",
+      icon: <LinkedInIcon className="w-5 h-5 transition-colors group-hover:text-[#0a66c2]" />,
     },
     {
       name: "Tipeee",
@@ -123,41 +132,66 @@ export default function Home() {
           role="navigation"
           aria-label="Liens principaux"
         >
-          {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/90 hover:border-zinc-700/90 active:scale-[0.99] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
-              aria-label={`${link.name} - ${link.description}`}
-            >
-              <div className="flex items-center gap-3.5 min-w-0">
-                <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-zinc-950 border border-zinc-800/90 text-zinc-400 group-hover:border-zinc-700 transition-colors shrink-0">
-                  {link.icon}
-                </div>
-                <div className="flex flex-col min-w-0 text-left">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm sm:text-base font-medium text-zinc-200 group-hover:text-white transition-colors">
-                      {link.name}
-                    </span>
-                    {link.badge && (
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400 border border-zinc-700/40">
-                        {link.badge}
-                      </span>
-                    )}
+          {links.map((link) => {
+            const content = (
+              <>
+                <div className="flex items-center gap-3.5 min-w-0">
+                  <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-zinc-950 border border-zinc-800/90 text-zinc-400 group-hover:border-zinc-700 transition-colors shrink-0">
+                    {link.icon}
                   </div>
-                  <span className="text-xs text-zinc-400 group-hover:text-zinc-300 transition-colors truncate">
-                    {link.description}
-                  </span>
+                  <div className="flex flex-col min-w-0 text-left">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm sm:text-base font-medium text-zinc-200 group-hover:text-white transition-colors">
+                        {link.name}
+                      </span>
+                      {link.badge && (
+                        <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400 border border-zinc-700/40">
+                          {link.badge}
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-xs text-zinc-400 group-hover:text-zinc-300 transition-colors truncate">
+                      {link.description}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="pl-3 shrink-0">
-                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
-              </div>
-            </a>
-          ))}
+                <div className="pl-3 shrink-0">
+                  <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+                </div>
+              </>
+            );
+
+            const className =
+              "group relative flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/90 hover:border-zinc-700/90 active:scale-[0.99] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400";
+            const ariaLabel = `${link.name} - ${link.description}`;
+
+            if (link.isInternal) {
+              return (
+                <Link
+                  key={link.name}
+                  href={link.url}
+                  className={className}
+                  aria-label={ariaLabel}
+                >
+                  {content}
+                </Link>
+              );
+            }
+
+            return (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={className}
+                aria-label={ariaLabel}
+              >
+                {content}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Story / About section */}
@@ -181,22 +215,13 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="mt-2 text-center text-xs text-zinc-500 flex flex-col items-center gap-2" role="contentinfo">
-          <div className="flex items-center gap-2.5">
-            <Link
-              href="/claude-marketplace"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors"
-            >
-              <Blocks className="w-3.5 h-3.5 text-blue-400" />
-              <span>Plugins Claude</span>
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Prendre contact</span>
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+          >
+            <Mail className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Prendre contact</span>
+          </Link>
           <p>© {new Date().getFullYear()} Romain Ecarnot. Tous droits réservés.</p>
         </footer>
       </main>

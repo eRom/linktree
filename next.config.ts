@@ -58,6 +58,19 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: '/llms-full.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/markdown; charset=utf-8',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
     ];
   },
 };
