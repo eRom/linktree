@@ -63,7 +63,7 @@ export const PLUGINS: MarketplacePlugin[] = [
       "Atelier image et document : nanobanana (Gemini) pour images, icônes et diagrammes ; gpt-image (OpenAI gpt-image-2.5 flare/sunburst) pour texte exact et fonds transparents ; filigrane vectoriel non destructif (AES-256) et QR-Code relu.",
     version: "0.5.0",
     repoUrl: "https://github.com/eRom/erom-image",
-    imageUrl: null,
+    imageUrl: "/marketplace/erom-image.png",
     category: "Génération média",
     installCommand: "claude plugin install erom-image@erom-marketplace",
   },
