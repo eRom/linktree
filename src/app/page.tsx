@@ -183,7 +183,7 @@ export default function Home() {
         <footer className="mt-2 text-center text-xs text-zinc-500 flex flex-col items-center gap-2" role="contentinfo">
           <div className="flex items-center gap-2.5">
             <Link
-              href="/marketplace"
+              href="/claude-marketplace"
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors"
             >
               <Blocks className="w-3.5 h-3.5 text-blue-400" />

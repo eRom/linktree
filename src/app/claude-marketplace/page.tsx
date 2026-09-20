@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Blocks, Github, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github, Sparkles } from "lucide-react";
 import { PLUGINS } from "@/data/plugins";
 import { PluginCard } from "@/components/PluginCard";
 import { MarketplaceHeaderCommand } from "@/components/MarketplaceHeaderCommand";
@@ -8,15 +8,15 @@ import { MarketplaceHeaderCommand } from "@/components/MarketplaceHeaderCommand"
 export const metadata: Metadata = {
   title: "Marketplace Plugins - Romain Ecarnot",
   description:
-    "Marketplace officielle des 12 plugins Claude Code développés par Romain Ecarnot : orchestration, recherche, dev iOS/macOS, SEO et vision.",
+    "Marketplace officielle des 9 plugins Claude Code développés par Romain Ecarnot : orchestration, recherche, SEO et vision.",
   alternates: {
-    canonical: "https://www.romain-ecarnot.com/marketplace",
+    canonical: "https://www.romain-ecarnot.com/claude-marketplace",
   },
   openGraph: {
     title: "Marketplace Plugins Claude Code - Romain Ecarnot",
     description:
-      "Catalogue officiel des 12 plugins et skills Claude Code créés par Romain Ecarnot.",
-    url: "https://www.romain-ecarnot.com/marketplace",
+      "Catalogue officiel des 9 plugins et skills Claude Code créés par Romain Ecarnot.",
+    url: "https://www.romain-ecarnot.com/claude-marketplace",
     images: [
       {
         url: "https://www.romain-ecarnot.com/og-image.jpg",
@@ -32,11 +32,11 @@ export default function MarketplacePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": "https://www.romain-ecarnot.com/marketplace#webpage",
-    url: "https://www.romain-ecarnot.com/marketplace",
+    "@id": "https://www.romain-ecarnot.com/claude-marketplace#webpage",
+    url: "https://www.romain-ecarnot.com/claude-marketplace",
     name: "Marketplace Plugins Claude Code - Romain Ecarnot",
     description:
-      "Catalogue des 12 plugins et extensions Claude Code développés par Romain Ecarnot.",
+      "Catalogue des 9 plugins et extensions Claude Code développés par Romain Ecarnot.",
     publisher: {
       "@type": "Person",
       "@id": "https://www.romain-ecarnot.com/#person",
@@ -104,20 +104,10 @@ export default function MarketplacePage() {
 
         {/* Page Header */}
         <header className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-300">
-            <Blocks className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Écosystème Claude Code</span>
-            <span className="w-1 h-1 rounded-full bg-zinc-600" />
-            <span className="text-zinc-400">{PLUGINS.length} plugins</span>
-          </div>
-
           <div className="flex flex-col items-center gap-2">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-100">
               Marketplace eRom
             </h1>
-            <p className="text-sm sm:text-base text-zinc-300 font-medium">
-              Plugins &amp; skills spécialisés pour Claude Code
-            </p>
             <p className="text-xs sm:text-sm text-zinc-400 max-w-lg leading-relaxed">
               Une suite d&apos;outils taillés pour l&apos;efficacité, la sobriété logicielle
               et l&apos;orchestration intelligente, développés par Romain Ecarnot.

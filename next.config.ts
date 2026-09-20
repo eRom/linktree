@@ -21,6 +21,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/marketplace',
+        destination: '/claude-marketplace',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

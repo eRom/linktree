@@ -16,7 +16,7 @@ Sa philosophie repose sur le pragmatisme, l'anti-overkill et la recherche de la 
 ## Liens Officiels & Profils
 
 - **Site & Hub** : https://www.romain-ecarnot.com/
-- **Marketplace Plugins Claude Code** : https://www.romain-ecarnot.com/marketplace
+- **Marketplace Plugins Claude Code** : https://www.romain-ecarnot.com/claude-marketplace
 - **Curriculum Vitae** : https://cv.romain-ecarnot.com/
 - **LinkedIn** : https://www.linkedin.com/in/romainecarnot/
 - **GitHub** : https://github.com/eRom
