@@ -4,6 +4,7 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const URL_LIST = [
   `https://${HOST}/`,
   `https://${HOST}/contact`,
+  `https://${HOST}/claude-marketplace`,
 ];
 
 async function submitIndexNow() {

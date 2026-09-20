@@ -22,10 +22,66 @@ Sa philosophie repose sur le pragmatisme, l'anti-overkill et la recherche de la 
 - **GitHub** : https://github.com/eRom
 - **Tipeee** : https://fr.tipeee.com/rebondir-apres-lavc-ma-carriere-dans-la-tech/
 
+## Marketplace de Plugins Claude Code (eRom)
+
+Romain Ecarnot conçoit et maintient une suite de 9 plugins et extensions pour Claude Code (CLI d'Anthropic), distribuée via sa marketplace officielle :
+
+- **Ajout de la marketplace dans Claude Code** :
+  `/plugin marketplace add eRom/erom-marketplace`
+- **Catalogue en ligne** :
+  https://www.romain-ecarnot.com/claude-marketplace
+
+### Plugins disponibles
+
+1. **Caserne (v3.1.0)** - *Orchestration d'équipe & MCP Caserne*
+   - Description : Orchestration cross-projet pour agents IA. Connecte l'agent au MCP Caserne pour conférer à chaque agent sa propre identité sur Linear, Slack et le mail (gestion d'issues et délégation sans collision).
+   - Installation : `claude plugin install erom-caserne@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-caserne
+
+2. **Devil (v0.9.3)** - *Avocats du diable & Revue critique*
+   - Description : Reviews critiques de spécifications, interrogatoire socratique de brainstormings et revue de code multi-modèles (Gemini, GLM, DeepSeek, Opus, Kimi) en unitaire ou en essaim.
+   - Installation : `claude plugin install erom-devil@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-devil
+
+3. **Research (v0.9.2)** - *Deep Research multi-moteurs*
+   - Description : Moteurs de recherche approfondie complémentaires : deep-gemini (Antigravity CLI, multi-rounds, matrice de preuves), deep-claude (subagents natifs), deep-grok et deep-notebook (NotebookLM).
+   - Installation : `claude plugin install erom-research@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-research
+
+4. **Vision (v0.1.1)** - *Gate design & Juge vision UI*
+   - Description : Contrôle qualité design avant rendu UI. Un juge vision externe évalue des captures d'écran selon la grille eRom et rend un verdict binaire PASS/FAIL sur 10 critères avec preuves.
+   - Installation : `claude plugin install erom-vision@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-agence-vision
+
+5. **Image (v0.5.0)** - *Atelier image, document & filigrane*
+   - Description : Génération d'images via Gemini (nanobanana) et GPT Image (texte exact, fonds transparents), filigrane vectoriel non destructif (AES-256) et QR-Code vérifié.
+   - Installation : `claude plugin install erom-image@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-image
+
+6. **Gemini (v0.3.0)** - *Capacités multimodales & Antigravity*
+   - Description : Transcription audio/vidéo fidèle, découpage visuel horodaté avec OCR, Q&A média et conversion OCR document vers markdown via Gemini et l'Antigravity CLI.
+   - Installation : `claude plugin install erom-gemini@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-gemini
+
+7. **Insight (v0.6.0)** - *Analyse & Audit de dépôts tiers*
+   - Description : Exploration de dépôts GitHub tiers, benchmark d'agents CLI concurrents, confrontation promesses/code réel et audit de sécurité des skills avant installation.
+   - Installation : `claude plugin install erom-insight@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-agence-insight
+
+8. **Dev-plugin (v0.1.5)** - *Cycle de vie des plugins Claude Code*
+   - Description : Outillage complet du cycle de vie d'un plugin : scaffolding, illustration au fusain 1536x1024, bump SemVer, assertions CI et publication ordonnée.
+   - Installation : `claude plugin install erom-dev-plugin@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-agence-dev-plugin
+
+9. **SEO (v1.0.0)** - *Cycle SEO/GEO complet sans abonnement*
+   - Description : Cycle SEO et GEO complet sans outil tiers payant : stratégie, audit sourcé, correctifs commités, checklist de validation, Google Search Console, Bing et rapport client.
+   - Installation : `claude plugin install erom-seo@erom-marketplace`
+   - Dépôt : https://github.com/eRom/erom-agence-seo
+
 ## Domaines d'Intervention & Compétences Clés
 
 - **Accompagnement aux usages du numérique** : montée en compétence, autonomie technologique, appropriation des outils modernes.
-- **Intelligence Artificielle & IA Générative** : compréhension, prompt engineering, automatisation de flux de travail, intégration d'outils d'IA au quotidien.
+- **Intelligence Artificielle & IA Générative** : compréhension, prompt engineering, automatisation de flux de travail, agents autonomes et systèmes multi-agents.
 - **Architecture & Ingénierie logicielle** : conception de systèmes simples, robustes, scalables et faciles à maintenir.
 - **Vulgarisation & Pédagogie** : capacité à traduire des sujets techniques pointus en concepts limpides pour tous les publics.
 - **Résilience & Parcours de vie** : témoignage, sensibilisation et engagement autour de la reprise professionnelle post-AVC.

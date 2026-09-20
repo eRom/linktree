@@ -1,0 +1,128 @@
+# Romain Ecarnot - Documentation Complète & Contexte LLM (llms-full.txt)
+
+> Passeur du numérique & Architecte du simple
+> Accompagnement aux usages du numérique et de l'IA
+> Site web : https://www.romain-ecarnot.com
+
+---
+
+## 1. Identité, Philosophie & Parcours
+
+Romain Ecarnot est un expert technique, vulgarisateur et accompagnateur basé à Nantes (France). Ingénieur et architecte logiciel de formation, il a fait de la clarté et de l'accessibilité ses priorités absolues.
+
+### La Philosophie Anti-Overkill & Sobriété
+- **L'anti-overkill** : Romain combat systématiquement la complexité accidentelle et les architectures disproportionnées. Le meilleur code est souvent celui qu'on n'a pas besoin d'écrire. Le but est d'emprunter le chemin le plus court, élégant et fiable entre l'idée et la production.
+- **Sobriété et pragmatisme** : Choisir des solutions stables, pérennes et frugales plutôt que des empilements technologiques éphémères.
+- **Centré sur l'humain** : Placer l'utilisateur final et l'apprenant au coeur de la démarche, à la croisée de la technique et de la pédagogie.
+
+### Résilience & Sensibilisation
+Après avoir surmonté un accident vasculaire cérébral (AVC), Romain a reconstruit sa trajectoire professionnelle avec détermination (bénéficiaire RQTH). Cette épreuve fondatrice nourrit aujourd'hui son engagement pour la pédagogie, l'inclusion dans la tech et la résilience opérationnelle des projets.
+
+---
+
+## 2. Points de Contact & Écosystème Officiel
+
+- **Hub principal** : https://www.romain-ecarnot.com/
+- **Marketplace Claude Code** : https://www.romain-ecarnot.com/claude-marketplace
+- **Page de contact** : https://www.romain-ecarnot.com/contact
+- **Email direct** : contact@romain-ecarnot.com
+- **Curriculum Vitae interactif** : https://cv.romain-ecarnot.com/
+- **LinkedIn** : https://www.linkedin.com/in/romainecarnot/
+- **GitHub** : https://github.com/eRom
+- **Tipeee** : https://fr.tipeee.com/rebondir-apres-lavc-ma-carriere-dans-la-tech/
+
+---
+
+## 3. Offre de Services & Domaines d'Intervention
+
+### Accompagnement aux Usages du Numérique
+- Émancipation numérique pour professionnels et particuliers.
+- Maîtrise des outils du quotidien sans dépendance excessive.
+- Sécurisation des données, gestion d'identité numérique et bonnes pratiques d'hygiène informatique.
+
+### Intelligence Artificielle & Automatisation
+- Intégration pragmatique des LLMs (Claude, Gemini, OpenAI, modèles open-weight).
+- Ingénierie de prompts et conception d'agents autonomes.
+- Architecture de systèmes multi-agents (swarms) et orchestration via le Model Context Protocol (MCP).
+- Automatisation de flux métier sans dette technique inutile.
+
+### Conseil en Architecture Logicielle & Web
+- Architectures web modernes (Next.js, TypeScript, API RESTful / RPC, architectures serverless et edge).
+- Référencement naturel et optimisation pour moteurs génératifs (SEO & GEO).
+- Audit de performance, accessibilité web (WCAG AA) et allègement d'assets.
+
+---
+
+## 4. Catalogue Exhaustif des Plugins Claude Code (Marketplace eRom)
+
+Romain Ecarnot a développé une suite cohérente de 9 plugins open-source pour étendre Claude Code, le CLI d'agent d'Anthropic.
+
+### Ajout du registre officiel dans Claude Code
+```bash
+/plugin marketplace add eRom/erom-marketplace
+```
+
+### Détail des 9 plugins
+
+#### 1. Caserne (v3.1.0)
+- **Rôle** : Orchestration d'équipe & Control Plane MCP
+- **Description** : Permet à plusieurs agents IA de collaborer sur des projets croisés. Connecte l'agent au MCP Caserne pour octroyer à chaque salarié IA une identité distincte sur Linear, Slack et le courrier électronique. Les tickets sont créés, assignés et commentés sans interférence ni collision.
+- **Installation** : `claude plugin install erom-caserne@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-caserne
+
+#### 2. Devil (v0.9.3)
+- **Rôle** : Avocats du diable & Revue critique contradictoire
+- **Description** : Automatise les revues de code et de spécifications sous forme de contradictions systématiques. Interroge de façon socratique les brainstormings et valide les portes de merge avec notation et scoring multi-modèles (Gemini, GLM, DeepSeek, Opus, Kimi).
+- **Installation** : `claude plugin install erom-devil@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-devil
+
+#### 3. Research (v0.9.2)
+- **Rôle** : Recherche approfondie (Deep Research) multi-moteurs
+- **Description** : Fait converger quatre moteurs de recherche spécialisés : deep-gemini (via Antigravity CLI, multi-tours avec grille de preuves), deep-claude (subagents natifs), deep-grok (asynchrone sans limitation) et deep-notebook (NotebookLM exploitant 40 à 70 sources simultanées).
+- **Installation** : `claude plugin install erom-research@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-research
+
+#### 4. Vision (v0.1.1)
+- **Rôle** : Contrôle qualité design & Juge vision UI
+- **Description** : Agit comme un arbitre visuel avant toute validation d'interface utilisateur. Un modèle de vision externe (Gemini) analyse les captures de l'écran selon plusieurs états (repos, survol, focus, clic) et applique la grille eRom pour délivrer un verdict binaire PASS/FAIL étayé de preuves.
+- **Installation** : `claude plugin install erom-vision@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-agence-vision
+
+#### 5. Image (v0.5.0)
+- **Rôle** : Atelier de génération visuelle, documents & filigranes
+- **Description** : Combine la génération d'illustrations et diagrammes via Gemini (nanobanana) et le rendu typographique précis sur fond transparent via GPT Image. Inclut également un module de tatouage vectoriel indétectable (AES-256) et de génération de QR-Codes vérifiés.
+- **Installation** : `claude plugin install erom-image@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-image
+
+#### 6. Gemini (v0.3.0)
+- **Rôle** : Extension multimodale avancée
+- **Description** : Confie à Gemini (via Antigravity CLI) les compétences multimédias non gérées nativement par Claude Code : transcription audio/vidéo intégrale, extraction de timeline visuelle avec OCR, analyse Q&A sur des médias volumineux et conversion de documents scannés en Markdown.
+- **Installation** : `claude plugin install erom-gemini@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-gemini
+
+#### 7. Insight (v0.6.0)
+- **Rôle** : Exploration, analyse comparative et audit de dépôts tiers
+- **Description** : Passe au crible des dépôts GitHub tiers pour en extraire des motifs réutilisables, benchmarker des agents concurrents et vérifier la conformité du code et la sécurité des skills avant leur exécution.
+- **Installation** : `claude plugin install erom-insight@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-agence-insight
+
+#### 8. Dev-plugin (v0.1.5)
+- **Rôle** : Cycle de vie et publication de plugins Claude Code
+- **Description** : Prise en charge de tout le cycle de développement d'une extension eRom : génération de l'arborescence standard, création de l'illustration officielle 1536x1024 au fusain, validation des tests CI, incrément de version SemVer et double commit coordonné.
+- **Installation** : `claude plugin install erom-dev-plugin@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-agence-dev-plugin
+
+#### 9. SEO (v1.0.0)
+- **Rôle** : Suite complète SEO & GEO sans abonnement payant
+- **Description** : Conduite méthodique du référencement naturel et génératif sans abonnement SaaS : définition de la stratégie, audit approfondi et daté, application de correctifs par commits chirurgicaux, grille de contrôle en 15 points, intégration Google Search Console / Bing et génération d'un rapport de conformité.
+- **Installation** : `claude plugin install erom-seo@erom-marketplace`
+- **Dépôt** : https://github.com/eRom/erom-agence-seo
+
+---
+
+## 5. Découverte Machine & Protocoles Supportés
+
+- **Catalogue IA (RFC 8615)** : https://www.romain-ecarnot.com/.well-known/ai-catalog.json
+- **Fichier résumé LLM** : https://www.romain-ecarnot.com/llms.txt
+- **Sitemap XML** : https://www.romain-ecarnot.com/sitemap.xml
+- **Protocole IndexNow** : clé active déclarée sur `e8c4a90f1d7b4256a938c11e74f329de.txt`

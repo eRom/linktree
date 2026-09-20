@@ -13,7 +13,7 @@ export const MARKETPLACE_ADD_COMMAND = "/plugin marketplace add eRom/erom-market
 
 export const PLUGINS: MarketplacePlugin[] = [
   {
-    name: "caserne",
+    name: "Caserne",
     title: "Orchestration d'équipe & MCP Caserne",
     description:
       "Plugin d'orchestration cross-projet pour agents IA. Branche l'agent sur le MCP Caserne, le control plane qui donne à chaque salarié IA sa propre identité sur Linear, Slack et le mail : issues créées, commentées et déléguées sans collision.",

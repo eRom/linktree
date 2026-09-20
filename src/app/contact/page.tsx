@@ -24,6 +24,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact - Romain Ecarnot",
+    description:
+      "Contactez Romain Ecarnot pour tout accompagnement aux usages du numérique et de l'IA.",
+    images: ["https://www.romain-ecarnot.com/og-image.jpg"],
+  },
 };
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -96,6 +103,29 @@ export default function ContactPage() {
             "name": "Contact - Romain Ecarnot",
             "description":
               "Contactez Romain Ecarnot pour tout accompagnement aux usages du numérique et de l'IA.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.romain-ecarnot.com/#website",
+              "name": "Romain Ecarnot",
+              "url": "https://www.romain-ecarnot.com"
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Accueil",
+                  "item": "https://www.romain-ecarnot.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Contact",
+                  "item": "https://www.romain-ecarnot.com/contact"
+                }
+              ]
+            },
             "mainEntity": {
               "@type": "Person",
               "@id": "https://www.romain-ecarnot.com/#person",

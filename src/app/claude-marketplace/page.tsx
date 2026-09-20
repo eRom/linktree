@@ -6,16 +6,28 @@ import { PluginCard } from "@/components/PluginCard";
 import { MarketplaceHeaderCommand } from "@/components/MarketplaceHeaderCommand";
 
 export const metadata: Metadata = {
-  title: "Marketplace Plugins - Romain Ecarnot",
+  title: "Marketplace Plugins Claude Code - Romain Ecarnot",
   description:
-    "Marketplace officielle des 9 plugins Claude Code développés par Romain Ecarnot : orchestration, recherche, SEO et vision.",
+    "Marketplace officielle des 9 plugins Claude Code développés par Romain Ecarnot : orchestration d'agents, recherche, SEO, vision et outillage.",
+  keywords: [
+    "Plugins Claude Code",
+    "Claude Code Marketplace",
+    "Extensions Claude Code",
+    "Agents IA",
+    "Orchestration agents",
+    "Caserne",
+    "Romain Ecarnot",
+    "Claude CLI",
+    "Deep Research",
+    "SEO technique",
+  ],
   alternates: {
     canonical: "https://www.romain-ecarnot.com/claude-marketplace",
   },
   openGraph: {
     title: "Marketplace Plugins Claude Code - Romain Ecarnot",
     description:
-      "Catalogue officiel des 9 plugins et skills Claude Code créés par Romain Ecarnot.",
+      "Catalogue officiel des 9 plugins et skills Claude Code créés par Romain Ecarnot : orchestration, recherche, SEO et vision.",
     url: "https://www.romain-ecarnot.com/claude-marketplace",
     images: [
       {
@@ -25,6 +37,13 @@ export const metadata: Metadata = {
         alt: "Marketplace Plugins Claude Code - Romain Ecarnot",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marketplace Plugins Claude Code - Romain Ecarnot",
+    description:
+      "Catalogue officiel des 9 plugins et skills Claude Code créés par Romain Ecarnot.",
+    images: ["https://www.romain-ecarnot.com/og-image.jpg"],
   },
 };
 
@@ -37,6 +56,29 @@ export default function MarketplacePage() {
     name: "Marketplace Plugins Claude Code - Romain Ecarnot",
     description:
       "Catalogue des 9 plugins et extensions Claude Code développés par Romain Ecarnot.",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": "https://www.romain-ecarnot.com/#website",
+      name: "Romain Ecarnot",
+      url: "https://www.romain-ecarnot.com",
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: "https://www.romain-ecarnot.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Marketplace Plugins Claude Code",
+          item: "https://www.romain-ecarnot.com/claude-marketplace",
+        },
+      ],
+    },
     publisher: {
       "@type": "Person",
       "@id": "https://www.romain-ecarnot.com/#person",
@@ -51,14 +93,27 @@ export default function MarketplacePage() {
         item: {
           "@type": "SoftwareApplication",
           name: plugin.name,
+          headline: plugin.title,
           applicationCategory: "DeveloperApplication",
+          applicationSubCategory: "AI Agent Plugin",
           operatingSystem: "Claude Code CLI",
           version: plugin.version,
           description: plugin.description,
           url: plugin.repoUrl,
+          downloadUrl: plugin.repoUrl,
+          image: plugin.imageUrl
+            ? `https://www.romain-ecarnot.com${plugin.imageUrl}`
+            : undefined,
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "EUR",
+          },
           author: {
             "@type": "Person",
+            "@id": "https://www.romain-ecarnot.com/#person",
             name: "Romain Ecarnot",
+            url: "https://www.romain-ecarnot.com",
           },
         },
       })),

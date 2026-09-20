@@ -32,6 +32,22 @@
       ]
     },
     {
+      "identifier": "urn:air:romain-ecarnot.com:marketplace:claude",
+      "displayName": "Marketplace Plugins Claude Code",
+      "type": "text/html",
+      "description": "Catalogue officiel des 9 plugins Claude Code développés par Romain Ecarnot : orchestration multi-agents Caserne, QA adverse, recherche web, vision, SEO, génération d'images et intégration Gemini.",
+      "url": "https://www.romain-ecarnot.com/claude-marketplace",
+      "tags": [
+        "claude-code",
+        "plugins",
+        "marketplace",
+        "ai-agents",
+        "orchestration",
+        "developer-tools",
+        "llm"
+      ]
+    },
+    {
       "identifier": "urn:air:romain-ecarnot.com:cv:interactive",
       "displayName": "Curriculum Vitae interactif",
       "type": "text/html",

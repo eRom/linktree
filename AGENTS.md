@@ -65,14 +65,17 @@ Bing Webmaster Tools lève un avertissement sévère si un titre dépasse 70 car
   `"Romain Ecarnot - Passeur du numérique & Architecte du simple"` (exactement 60 caractères, idéal pour Google et Bing). Ne jamais rajouter de suffixe comme ` | Linktree`.
 * **Contact (`src/app/contact/page.tsx`) :**
   `"Contact - Romain Ecarnot | Passeur du numérique"` (48 caractères).
+* **Marketplace (`src/app/claude-marketplace/page.tsx`) :**
+  `"Marketplace Plugins Claude Code - Romain Ecarnot"` (49 caractères).
 
 ### Microdonnées & Référencement sémantique
 * `src/app/layout.tsx` intègre un graphe JSON-LD Schema.org complet :
   - `ProfilePage` (`#profilepage`)
   - `Person` (`#person` avec liens `sameAs` LinkedIn, GitHub, Tipeee)
   - `WebSite` (`#website`)
-* `src/app/contact/page.tsx` intègre un schéma `ContactPage`.
-* Découverte IA : fichier `public/llms.txt` maintenu à jour à la racine, et lien `ai-catalog` dans le `<head>`.
+* `src/app/contact/page.tsx` intègre un schéma `ContactPage` avec fil d'Ariane (`BreadcrumbList`).
+* `src/app/claude-marketplace/page.tsx` intègre un schéma `CollectionPage` + `ItemList` avec les 9 `SoftwareApplication` et `BreadcrumbList`.
+* Découverte IA : fichiers `public/llms.txt` et `public/llms-full.txt` maintenus à jour à la racine, et liens de découverte dans le `<head>` (`ai-catalog` RFC 8615 et `alternate` type `text/plain`).
 
 ### IndexNow & Sitemaps
 * Clé IndexNow hébergée sur `https://www.romain-ecarnot.com/e8c4a90f1d7b4256a938c11e74f329de.txt`.

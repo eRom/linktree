@@ -134,6 +134,9 @@ export default function RootLayout({
                     "Sobriété et Simplicité logicielle",
                     "Pédagogie & Vulgarisation Tech",
                     "Résilience et Rebond post-AVC",
+                    "Plugins et extensions Claude Code",
+                    "Orchestration d'agents IA (Swarm, MCP)",
+                    "GEO (Generative Engine Optimization)",
                   ],
                   "address": {
                     "@type": "PostalAddress",
@@ -191,6 +194,20 @@ export default function RootLayout({
           rel="ai-catalog"
           href="/.well-known/ai-catalog.json"
           type="application/ai-catalog+json"
+        />
+
+        {/* LLMs & AI Agents Context */}
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="LLM Context"
+        />
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms-full.txt"
+          title="LLM Context Full"
         />
       </head>
       <body
