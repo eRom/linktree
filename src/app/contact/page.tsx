@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact - Romain Ecarnot | Passeur du numérique & Architecte du simple",
+  title: "Contact - Romain Ecarnot | Passeur du numérique",
   description:
     "Contactez Romain Ecarnot pour tout accompagnement aux usages du numérique et de l'IA, conseil en architecture logicielle ou opportunité professionnelle.",
   alternates: {

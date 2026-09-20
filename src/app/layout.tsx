@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Romain Ecarnot - Passeur du numérique & Architecte du simple | Linktree",
+  title: "Romain Ecarnot - Passeur du numérique & Architecte du simple",
   description:
     "Romain Ecarnot - Passeur du numérique & Architecte du simple. Accompagnement aux usages du numérique et de l'IA.",
   keywords: [
