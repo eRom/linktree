@@ -213,6 +213,41 @@ export default function Home() {
           </p>
         </section>
 
+        {/* QR Code (Desktop only) */}
+        <section
+          className="hidden md:flex items-center justify-between p-4 sm:p-5 rounded-xl border border-zinc-800/80 bg-zinc-900/30 backdrop-blur-xs gap-4"
+          aria-label="Version mobile"
+        >
+          <div className="flex flex-col gap-1 text-left">
+            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              Version mobile
+            </span>
+            <p className="text-xs sm:text-sm text-zinc-300/90 leading-relaxed">
+              Scannez pour ouvrir le hub sur votre smartphone
+            </p>
+            <span className="text-xs font-mono text-zinc-500">
+              romain-ecarnot.com
+            </span>
+          </div>
+
+          <a
+            href="https://www.romain-ecarnot.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="https://www.romain-ecarnot.com"
+            aria-label="QR Code vers https://www.romain-ecarnot.com"
+            className="p-1.5 bg-white rounded-lg shrink-0 shadow-md ring-1 ring-zinc-800 hover:scale-105 transition-transform duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+          >
+            <Image
+              src="/qrcode.svg"
+              alt="QR Code vers https://www.romain-ecarnot.com"
+              width={80}
+              height={80}
+              className="w-20 h-20"
+            />
+          </a>
+        </section>
+
         {/* Footer */}
         <footer className="mt-2 text-center text-xs text-zinc-500 flex flex-col items-center gap-2" role="contentinfo">
           <Link
