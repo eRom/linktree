@@ -165,9 +165,6 @@ export default function ContactPage() {
           </section>
 
           <section aria-labelledby="ailleurs">
-            <h2 id="ailleurs" className="type-rubric border-t-[3px] border-ink pt-2">
-              Ailleurs
-            </h2>
             <ul className="mt-1">
               {CHANNELS.map((channel) => (
                 <li key={channel.href} className="border-t border-ink first:border-t-0">
