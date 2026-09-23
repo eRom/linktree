@@ -18,6 +18,11 @@ export interface Milestone {
 export const MILESTONES: Milestone[] = [
   { period: "1998", text: "D.U.T. informatique à l'université de Nantes.", place: "Nantes" },
   {
+    period: "1998-2010",
+    text: "Développeur Multimédia, programmation 3d, framework Adobe Flash opensources",
+    place: "Nantes"
+  },
+  {
     period: "2011–2015",
     text: "Architecte logiciel des services Bbox TV chez Bouygues Telecom.",
     place: "Paris",
