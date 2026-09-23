@@ -4,8 +4,8 @@
   "description": "Romain Ecarnot - Passeur du numérique & Architecte du simple",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#09090b",
-  "theme_color": "#09090b",
+  "background_color": "#facebc",
+  "theme_color": "#facebc",
   "orientation": "portrait",
   "icons": [
     {

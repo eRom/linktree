@@ -1,141 +1,142 @@
-import sharp from 'sharp';
-import fs from 'fs';
-import path from 'path';
+// Génère public/og-image.jpg (1200x630) dans le monde « page Portrait » :
+// une page HTML rendue par Chrome headless via le protocole DevTools, sans dépendance.
+// Usage : bun scripts/generate-og-image.mjs   (CHROME_PATH pour un autre binaire que Chrome macOS)
+import { spawn } from 'node:child_process';
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 
 const WIDTH = 1200;
 const HEIGHT = 630;
-const AVATAR_PATH = path.join(import.meta.dir, '../public/avatar.jpg');
+const PORT = 9334;
+const CHROME_PATH =
+  process.env.CHROME_PATH ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const PORTRAIT_PATH = path.join(import.meta.dir, '../public/portrait.jpg');
 const OUTPUT_PATH = path.join(import.meta.dir, '../public/og-image.jpg');
 
-async function generateOGImage() {
-  console.log('🎨 Création de la nouvelle image OpenGraph...');
+const PAPER = '#facebc';
+const INK = '#1c1411';
+const INK_SOFT = '#584239';
 
-  // 1. Préparer l'avatar circulaire avec bordure
-  const AVATAR_SIZE = 240;
-  const avatarBuffer = fs.readFileSync(AVATAR_PATH);
-
-  const circularAvatar = await sharp(avatarBuffer)
-    .resize(AVATAR_SIZE, AVATAR_SIZE, { fit: 'cover' })
-    .composite([
-      {
-        input: Buffer.from(`
-          <svg width="${AVATAR_SIZE}" height="${AVATAR_SIZE}">
-            <circle cx="${AVATAR_SIZE / 2}" cy="${AVATAR_SIZE / 2}" r="${AVATAR_SIZE / 2}" fill="white"/>
-          </svg>
-        `),
-        blend: 'dest-in'
-      }
-    ])
-    .png()
-    .toBuffer();
-
-  // 2. SVG Background & Typography (Dark Épuré Linear/Vercel style)
-  const svgContent = `
-    <svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Top ambient glow -->
-        <radialGradient id="topGlow" cx="50%" cy="0%" r="60%">
-          <stop offset="0%" stop-color="#3b3b44" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#09090b" stop-opacity="0"/>
-        </radialGradient>
-
-        <!-- Subtle Card gradient -->
-        <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#18181b" stop-opacity="0.8"/>
-          <stop offset="100%" stop-color="#111113" stop-opacity="0.9"/>
-        </linearGradient>
-
-        <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#3f3f46" stop-opacity="0.8"/>
-          <stop offset="100%" stop-color="#27272a" stop-opacity="0.3"/>
-        </linearGradient>
-      </defs>
-
-      <!-- Base background #09090b -->
-      <rect width="${WIDTH}" height="${HEIGHT}" fill="#09090b"/>
-      <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#topGlow)"/>
-
-      <!-- Central Card -->
-      <rect x="70" y="75" width="1060" height="480" rx="24" fill="url(#cardGrad)"/>
-      <rect x="70" y="75" width="1060" height="480" rx="24" fill="none" stroke="url(#cardBorder)" stroke-width="1.5"/>
-
-      <!-- Avatar Ring (Center of avatar is at 130 + 120 = 250, 195 + 120 = 315) -->
-      <circle cx="250" cy="315" r="126" fill="none" stroke="#27272a" stroke-width="2"/>
-      <circle cx="250" cy="315" r="130" fill="none" stroke="#3f3f46" stroke-width="1" opacity="0.5"/>
-
-      <!-- Active Green Status Dot (bottom-right of avatar) -->
-      <circle cx="338" cy="403" r="14" fill="#10b981" stroke="#18181b" stroke-width="4"/>
-
-      <!-- Header Label / Domain -->
-      <g transform="translate(420, 155)">
-        <rect width="190" height="32" rx="16" fill="#27272a" opacity="0.6"/>
-        <circle cx="16" cy="16" r="4" fill="#10b981"/>
-        <text x="30" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#a1a1aa" letter-spacing="0.5">
-          romain-ecarnot.com
-        </text>
-      </g>
-
-      <!-- Main Title -->
-      <text x="420" y="255" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="700" fill="#fafafa" letter-spacing="-1">
-        Romain Ecarnot
-      </text>
-
-      <!-- Subtitle -->
-      <text x="420" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="27" font-weight="500" fill="#d4d4d8">
-        Passeur du numérique &amp; Architecte du simple
-      </text>
-
-      <!-- Tagline / Accompagnement -->
-      <text x="420" y="365" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="400" fill="#71717a">
-        Accompagnement aux usages du numérique et de l&apos;IA
-      </text>
-
-      <!-- Bottom Badges (Links) -->
-      <g transform="translate(420, 425)">
-        <!-- CV Badge -->
-        <rect x="0" y="0" width="105" height="36" rx="10" fill="#27272a" opacity="0.5"/>
-        <rect x="0" y="0" width="105" height="36" rx="10" fill="none" stroke="#3f3f46" stroke-width="1" opacity="0.6"/>
-        <text x="52" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#e4e4e7" text-anchor="middle">
-          Mon CV
-        </text>
-
-        <!-- LinkedIn Badge -->
-        <rect x="120" y="0" width="105" height="36" rx="10" fill="#27272a" opacity="0.5"/>
-        <rect x="120" y="0" width="105" height="36" rx="10" fill="none" stroke="#3f3f46" stroke-width="1" opacity="0.6"/>
-        <text x="172" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#e4e4e7" text-anchor="middle">
-          LinkedIn
-        </text>
-
-        <!-- GitHub Badge -->
-        <rect x="240" y="0" width="105" height="36" rx="10" fill="#27272a" opacity="0.5"/>
-        <rect x="240" y="0" width="105" height="36" rx="10" fill="none" stroke="#3f3f46" stroke-width="1" opacity="0.6"/>
-        <text x="292" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#e4e4e7" text-anchor="middle">
-          GitHub
-        </text>
-
-        <!-- Tipeee Badge -->
-        <rect x="360" y="0" width="105" height="36" rx="10" fill="#27272a" opacity="0.5"/>
-        <rect x="360" y="0" width="105" height="36" rx="10" fill="none" stroke="#3f3f46" stroke-width="1" opacity="0.6"/>
-        <text x="412" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#e4e4e7" text-anchor="middle">
-          Tipeee
-        </text>
-      </g>
-    </svg>
-  `;
-
-  // 3. Composer l'image finale
-  await sharp(Buffer.from(svgContent))
-    .composite([
-      {
-        input: circularAvatar,
-        top: 195,
-        left: 130,
-      }
-    ])
-    .jpeg({ quality: 95, mozjpeg: true })
-    .toFile(OUTPUT_PATH);
-
-  console.log('✅ Image OpenGraph générée avec succès:', OUTPUT_PATH);
+function buildHtml(portraitDataUri) {
+  return `<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Source+Serif+4:opsz,wght@8..60,200..900&display=block" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: ${WIDTH}px; height: ${HEIGHT}px; background: ${PAPER}; color: ${INK}; }
+  body { box-sizing: border-box; padding: 38px 56px 46px; display: flex; flex-direction: column; font-family: 'Source Serif 4', serif; }
+  .folio { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 12px;
+    font: 650 15px/1 'Archivo', sans-serif; font-variation-settings: 'wdth' 88; letter-spacing: .07em; text-transform: uppercase; }
+  .rule { height: 9px; box-sizing: border-box; border-top: 4px solid ${INK}; border-bottom: 1.5px solid ${INK}; }
+  .main { flex: 1; min-height: 0; display: grid; grid-template-columns: 392px 1fr; gap: 52px; margin-top: 30px; }
+  .photo { background: #777 url(${portraitDataUri}) 37% 35% / cover no-repeat; }
+  .text { display: flex; flex-direction: column; justify-content: space-between; }
+  h1 { margin: 0; font: 900 104px/.9 'Archivo', sans-serif; font-variation-settings: 'wdth' 70; letter-spacing: -.012em; }
+  .deck { margin: 24px 0 0; max-width: 30ch; font: 600 28px/1.28 'Source Serif 4', serif; font-optical-sizing: auto; }
+  .foot { display: flex; justify-content: space-between; align-items: baseline; border-top: 1.5px solid ${INK}; padding-top: 12px;
+    font: 500 17px/1.2 'Archivo', sans-serif; font-variation-settings: 'wdth' 92; color: ${INK_SOFT}; }
+  .foot strong { color: ${INK}; font-weight: 750; }
+</style>
+</head>
+<body>
+  <div class="folio"><span>romain-ecarnot.com</span><span>Portrait</span></div>
+  <div class="rule"></div>
+  <div class="main">
+    <div class="photo"></div>
+    <div class="text">
+      <div>
+        <h1>Romain Ecarnot,<br>sans détour.</h1>
+        <p class="deck">Passeur du numérique &amp; Architecte du simple. Accompagnement aux usages du numérique et de l&rsquo;IA.</p>
+      </div>
+      <div class="foot"><span><strong>Le CV complet</strong> · cv.romain-ecarnot.com</span><span>Nantes, France</span></div>
+    </div>
+  </div>
+</body>
+</html>`;
 }
 
-generateOGImage().catch(console.error);
+async function pageSocketUrl() {
+  for (let attempt = 0; attempt < 50; attempt++) {
+    try {
+      const pages = await (await fetch(`http://127.0.0.1:${PORT}/json/list`)).json();
+      const page = pages.find((entry) => entry.type === 'page');
+      if (page) return page.webSocketDebuggerUrl;
+    } catch {
+      // Chrome démarre encore.
+    }
+    await new Promise((resolve) => setTimeout(resolve, 200));
+  }
+  throw new Error(`Chrome headless injoignable (${CHROME_PATH})`);
+}
+
+async function generateOGImage() {
+  console.log('Création de l\'image OpenGraph (monde page Portrait)...');
+
+  const workDir = mkdtempSync(path.join(tmpdir(), 'og-image-'));
+  const htmlPath = path.join(workDir, 'og.html');
+  const portraitDataUri = `data:image/jpeg;base64,${readFileSync(PORTRAIT_PATH).toString('base64')}`;
+  writeFileSync(htmlPath, buildHtml(portraitDataUri));
+
+  const chrome = spawn(CHROME_PATH, [
+    '--headless=new',
+    `--remote-debugging-port=${PORT}`,
+    `--user-data-dir=${path.join(workDir, 'profile')}`,
+    '--hide-scrollbars',
+    '--no-first-run',
+    'about:blank',
+  ]);
+
+  try {
+    const socket = new WebSocket(await pageSocketUrl());
+    await new Promise((resolve) => socket.addEventListener('open', resolve, { once: true }));
+
+    let nextId = 1;
+    const pending = new Map();
+    let onLoad = null;
+    socket.addEventListener('message', (event) => {
+      const message = JSON.parse(String(event.data));
+      if (message.id && pending.has(message.id)) {
+        pending.get(message.id)(message.result);
+        pending.delete(message.id);
+      } else if (message.method === 'Page.loadEventFired' && onLoad) {
+        onLoad();
+      }
+    });
+    const send = (method, params = {}) => {
+      const id = nextId++;
+      socket.send(JSON.stringify({ id, method, params }));
+      return new Promise((resolve) => pending.set(id, resolve));
+    };
+
+    await send('Page.enable');
+    await send('Emulation.setDeviceMetricsOverride', {
+      width: WIDTH,
+      height: HEIGHT,
+      deviceScaleFactor: 1,
+      mobile: false,
+    });
+    const loaded = new Promise((resolve) => (onLoad = resolve));
+    await send('Page.navigate', { url: `file://${htmlPath}` });
+    await loaded;
+    await send('Runtime.evaluate', { expression: 'document.fonts.ready', awaitPromise: true });
+
+    const shot = await send('Page.captureScreenshot', {
+      format: 'jpeg',
+      quality: 90,
+      clip: { x: 0, y: 0, width: WIDTH, height: HEIGHT, scale: 1 },
+    });
+    writeFileSync(OUTPUT_PATH, Buffer.from(shot.data, 'base64'));
+    socket.close();
+  } finally {
+    chrome.kill();
+  }
+
+  console.log('Image OpenGraph générée :', OUTPUT_PATH);
+}
+
+generateOGImage().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

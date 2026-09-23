@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Grotesque de titraille (axe de largeur pour les titres condensés) et serif de texte en colonnes.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  axes: ["wdth"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
   subsets: ["latin"],
+  axes: ["opsz"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -87,7 +92,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="dark">
+    <html lang="fr" className={`${archivo.variable} ${sourceSerif.variable}`}>
       <head>
         {/* JSON-LD Schema.org (Google ProfilePage + Person Graph) */}
         <script
@@ -103,7 +108,7 @@ export default function RootLayout({
                   "name": "Romain Ecarnot - Passeur du numérique & Architecte du simple",
                   "description":
                     "Romain Ecarnot - Passeur du numérique & Architecte du simple. Accompagnement aux usages du numérique et de l'IA.",
-                  "dateModified": "2026-09-19T14:00:00+02:00",
+                  "dateModified": "2026-09-23T10:00:00+02:00",
                   "inLanguage": "fr-FR",
                   "mainEntity": {
                     "@id": "https://www.romain-ecarnot.com/#person",
@@ -159,8 +164,8 @@ export default function RootLayout({
         />
 
         {/* Additional SEO Meta Tags */}
-        <meta name="theme-color" content="#09090b" />
-        <meta name="msapplication-TileColor" content="#09090b" />
+        <meta name="theme-color" content="#facebc" />
+        <meta name="msapplication-TileColor" content="#facebc" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -210,9 +215,13 @@ export default function RootLayout({
           title="LLM Context Full"
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
+        <a
+          href="#contenu"
+          className="type-folio sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-4 focus:z-20 focus:border-2 focus:border-ink focus:bg-paper focus:px-3 focus:py-2"
+        >
+          Aller au contenu
+        </a>
         {children}
       </body>
     </html>

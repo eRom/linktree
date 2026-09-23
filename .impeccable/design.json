@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T12:00:00+02:00",
+  "title": "Design System: romain-ecarnot.com",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Encre noire chaude",
+        "canonical": "oklch(0.2 0.014 40)",
+        "hexApprox": "#1c1411",
+        "tonalRamp": [
+          "oklch(0.15 0.014 40)",
+          "oklch(0.26 0.014 40)",
+          "oklch(0.37 0.014 40)",
+          "oklch(0.48 0.014 40)",
+          "oklch(0.6 0.014 40)",
+          "oklch(0.72 0.014 40)",
+          "oklch(0.84 0.014 40)",
+          "oklch(0.95 0.014 40)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Encre délavée",
+        "canonical": "oklch(0.4 0.035 42)",
+        "hexApprox": "#584239",
+        "tonalRamp": [
+          "oklch(0.15 0.035 42)",
+          "oklch(0.26 0.035 42)",
+          "oklch(0.37 0.035 42)",
+          "oklch(0.48 0.035 42)",
+          "oklch(0.6 0.035 42)",
+          "oklch(0.72 0.035 42)",
+          "oklch(0.84 0.035 42)",
+          "oklch(0.95 0.035 42)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Saumon des pages éco",
+        "canonical": "oklch(0.885 0.056 43)",
+        "hexApprox": "#facebc",
+        "tonalRamp": [
+          "oklch(0.15 0.056 43)",
+          "oklch(0.26 0.056 43)",
+          "oklch(0.37 0.056 43)",
+          "oklch(0.48 0.056 43)",
+          "oklch(0.6 0.056 43)",
+          "oklch(0.72 0.056 43)",
+          "oklch(0.84 0.056 43)",
+          "oklch(0.95 0.056 43)"
+        ]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Saumon soutenu",
+        "canonical": "oklch(0.83 0.072 40)",
+        "hexApprox": "#f1b8a4",
+        "tonalRamp": [
+          "oklch(0.15 0.072 40)",
+          "oklch(0.26 0.072 40)",
+          "oklch(0.37 0.072 40)",
+          "oklch(0.48 0.072 40)",
+          "oklch(0.6 0.072 40)",
+          "oklch(0.72 0.072 40)",
+          "oklch(0.84 0.072 40)",
+          "oklch(0.95 0.072 40)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titre",
+        "purpose": "Titre de chaque page et titres d'articles plugins (tête, article, brève). Plafond 6rem."
+      },
+      "quote": {
+        "displayName": "Citation",
+        "purpose": "Citation en exergue, guillemets français."
+      },
+      "deck": {
+        "displayName": "Chapeau",
+        "purpose": "Chapeau sous le titre et sous-titre de l'article de tête du cahier, 36 à 40ch."
+      },
+      "title": {
+        "displayName": "Nom de lien",
+        "purpose": "Nom d'un lien dans une liste pleine largeur, porteur du crayon."
+      },
+      "body": {
+        "displayName": "Texte",
+        "purpose": "Récit en colonnes de journal et descriptions."
+      },
+      "rubric": {
+        "displayName": "Rubrique",
+        "purpose": "Titre de rubrique sous un filet épais, en capitales."
+      },
+      "folio": {
+        "displayName": "Folio",
+        "purpose": "Ligne de folio, sommaire, liens secondaires, boutons de copie, versions."
+      },
+      "caption": {
+        "displayName": "Légende",
+        "purpose": "Légendes de photos et planches, lieux, pied de page. Encre délavée."
+      },
+      "command": {
+        "displayName": "Commande",
+        "purpose": "Uniquement les commandes Claude Code copiables."
+      },
+      "deck-article": {
+        "displayName": "Chapeau d'article",
+        "purpose": "Sous-titre des deux articles secondaires du cahier ; les brèves n'en ont pas."
+      },
+      "date": {
+        "displayName": "Date",
+        "purpose": "Années de la chronologie « Repères », chiffres tabulaires, grotesque 900 condensée."
+      }
+    },
+    "shadows": [],
+    "textures": [
+      {
+        "name": "paper-grain",
+        "value": "feTurbulence fractalNoise baseFrequency .85, 3 octaves, tuile 240px, opacité 0.13",
+        "purpose": "Grain du papier journal sous le contenu, attaché à la feuille (défile avec elle)."
+      }
+    ],
+    "rules": [
+      {
+        "name": "rule-heavy",
+        "value": "border-top: 3px solid var(--color-ink)",
+        "purpose": "Ouvre une rubrique."
+      },
+      {
+        "name": "rule-thin",
+        "value": "border-top: 1px solid var(--color-ink)",
+        "purpose": "Sépare deux lignes d'une liste."
+      },
+      {
+        "name": "rule-double",
+        "value": "height: 7px; border-top: 3px solid var(--color-ink); border-bottom: 1px solid var(--color-ink)",
+        "purpose": "Sous le folio."
+      },
+      {
+        "name": "rule-dashed",
+        "value": "border-top: 1px dashed var(--color-ink)",
+        "purpose": "Rupture de 2025 dans la chronologie."
+      },
+      {
+        "name": "column-rule",
+        "value": "1px solid color-mix(in oklch, var(--color-ink) 70%, transparent)",
+        "purpose": "Filet entre colonnes de journal."
+      }
+    ],
+    "motion": [
+      {
+        "name": "pencil-underline",
+        "value": "background-size 420ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Soulignement au crayon tracé au survol et au focus. Coupé sous prefers-reduced-motion."
+      },
+      {
+        "name": "pencil-tick",
+        "value": "stroke-dashoffset 1 -> 0, 480ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Coche tracée après un lien consulté (mémoire localStorage). Coupée sous prefers-reduced-motion."
+      },
+      {
+        "name": "stamp-press",
+        "value": "opacity 0 + scale(1.55) -> 1, 220ms cubic-bezier(0.2, 0.9, 0.25, 1), rotate(-7deg), tenu 2400ms",
+        "purpose": "Tampon « Copié » sur le bouton de copie. Coupé sous prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "40rem",
+        "purpose": "Gouttière 2rem, date longue du folio, grilles de lignes à trois colonnes."
+      },
+      {
+        "name": "md",
+        "value": "48rem",
+        "purpose": "Récit en deux colonnes, articles plugins côte à côte."
+      },
+      {
+        "name": "lg",
+        "value": "64rem",
+        "purpose": "Grille 12 colonnes, portrait collant, colonnes justifiées et césurées."
+      }
+    ],
+    "container": {
+      "maxWidth": "88rem"
+    }
+  },
+  "components": [
+    {
+      "name": "Action principale (noir inversé)",
+      "kind": "button",
+      "refersTo": "action-primary",
+      "description": "Le seul bloc en noir inversé de la page : mène au but de la page (ici le CV).",
+      "html": "<a class=\"ds-action-primary\" href=\"#\"><span class=\"ds-action-primary-label\">Suite : le CV complet</span><span class=\"ds-action-primary-meta\"><span>cv.romain-ecarnot.com</span><svg viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></span></a>",
+      "css": ".ds-action-primary { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--color-ink, oklch(0.2 0.014 40)); color: var(--color-paper, oklch(0.885 0.056 43)); padding: 20px 24px; border-radius: 0; text-decoration: none; } .ds-action-primary-label { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-variation-settings: 'wdth' 80; font-size: 1.875rem; line-height: 1.25; } .ds-action-primary-meta { display: flex; align-items: center; gap: 12px; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.8125rem; font-weight: 500; color: var(--color-paper-deep, oklch(0.83 0.072 40)); } .ds-action-primary-meta svg { color: var(--color-paper, oklch(0.885 0.056 43)); } .ds-action-primary:focus-visible { outline: 2px solid var(--color-ink, oklch(0.2 0.014 40)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Folio (navigation)",
+      "kind": "nav",
+      "refersTo": "folio",
+      "description": "Ligne de folio en capitales, date de l'édition et sommaire des trois pages, double filet dessous.",
+      "html": "<header class=\"ds-folio\"><div class=\"ds-folio-line\"><p><time>Mercredi 23 septembre 2026</time> · romain-ecarnot.com</p><nav><a class=\"ds-pencil ds-current\" href=\"#\" aria-current=\"page\">Portrait</a><a class=\"ds-pencil\" href=\"#\">Plugins</a><a class=\"ds-pencil\" href=\"#\">Contact</a></nav></div><div class=\"ds-rule-double\"></div></header>",
+      "css": ".ds-folio { color: var(--color-ink, oklch(0.2 0.014 40)); } .ds-folio-line { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 8px; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 650; font-variation-settings: 'wdth' 88; font-size: 0.75rem; line-height: 1.3; letter-spacing: 0.07em; text-transform: uppercase; } .ds-folio-line p { margin: 0; } .ds-folio-line nav { display: flex; gap: 24px; } .ds-folio a { color: inherit; text-decoration: none; } .ds-current { font-weight: 850; } .ds-rule-double { height: 7px; border-top: 3px solid var(--color-ink, oklch(0.2 0.014 40)); border-bottom: 1px solid var(--color-ink, oklch(0.2 0.014 40)); } .ds-pencil { background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5.2C24 3.6 41 5.9 63 4.4s43-1.9 66 .2 45 1.1 70-1.4' fill='none' stroke='%231c1411' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 0.42em; padding-bottom: 0.14em; transition: background-size 420ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-pencil:hover, .ds-pencil:focus-visible, .ds-pencil[aria-current='page'] { background-size: 100% 0.42em; } .ds-pencil:focus-visible { outline: 2px solid var(--color-ink, oklch(0.2 0.014 40)); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-pencil { transition: none; } }"
+    },
+    {
+      "name": "Ligne de lien",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "Un lien par ligne pleine largeur, filet fin entre les lignes ; le nom seul reçoit le crayon.",
+      "html": "<ul class=\"ds-link-rows\"><li><a class=\"ds-link-row\" href=\"#\"><span class=\"ds-link-name\"><span class=\"ds-pencil\">GitHub</span></span><span class=\"ds-link-dest\">Code source des plugins et des outils</span><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></li><li><a class=\"ds-link-row\" href=\"#\"><span class=\"ds-link-name\"><span class=\"ds-pencil\">LinkedIn</span></span><span class=\"ds-link-dest\">Parcours et recommandations</span><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></li></ul>",
+      "css": ".ds-link-rows { list-style: none; margin: 0; padding: 0; border-top: 3px solid var(--color-ink, oklch(0.2 0.014 40)); } .ds-link-rows li + li { border-top: 1px solid var(--color-ink, oklch(0.2 0.014 40)); } .ds-link-row { display: grid; grid-template-columns: 13rem 1fr auto; align-items: baseline; column-gap: 24px; padding: 14px 0; color: var(--color-ink, oklch(0.2 0.014 40)); text-decoration: none; } .ds-link-name { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-variation-settings: 'wdth' 84; font-size: 1.25rem; line-height: 1.25; } .ds-link-dest { font-family: 'Source Serif 4', Georgia, serif; font-size: 0.9375rem; line-height: 1.375; color: var(--color-ink-soft, oklch(0.4 0.035 42)); } .ds-link-row:focus-visible { outline: 2px solid var(--color-ink, oklch(0.2 0.014 40)); outline-offset: 3px; } .ds-pencil { background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5.2C24 3.6 41 5.9 63 4.4s43-1.9 66 .2 45 1.1 70-1.4' fill='none' stroke='%231c1411' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 0.42em; padding-bottom: 0.14em; transition: background-size 420ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-link-row:hover .ds-pencil, .ds-link-row:focus-visible .ds-pencil { background-size: 100% 0.42em; } @media (prefers-reduced-motion: reduce) { .ds-pencil { transition: none; } }"
+    },
+    {
+      "name": "Commande copiable",
+      "kind": "custom",
+      "refersTo": "command",
+      "description": "Commande Claude Code en monospace, sertie d'un filet, bouton Copier en folio.",
+      "html": "<div class=\"ds-command\"><code>claude plugin install erom-devil@erom-marketplace</code><button type=\"button\" class=\"ds-copy\"><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\"/><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"/></svg>Copier</button></div>",
+      "css": ".ds-command { display: flex; align-items: stretch; border: 1px solid var(--color-ink, oklch(0.2 0.014 40)); color: var(--color-ink, oklch(0.2 0.014 40)); border-radius: 0; } .ds-command code { flex: 1; min-width: 0; padding: 10px 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-ligatures: none; font-size: 0.8125rem; line-height: 1.375; overflow-wrap: anywhere; user-select: all; } .ds-copy { display: flex; align-items: center; gap: 6px; padding: 0 12px; background: transparent; color: inherit; border: 0; border-left: 1px solid var(--color-ink, oklch(0.2 0.014 40)); cursor: pointer; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 650; font-variation-settings: 'wdth' 88; font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; } .ds-copy:hover { background: var(--color-paper-deep, oklch(0.83 0.072 40)); } .ds-copy:focus-visible { outline: 2px solid var(--color-ink, oklch(0.2 0.014 40)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Commande copiable inversée",
+      "kind": "custom",
+      "refersTo": "command-inverse",
+      "description": "Variante noir inversé, réservée à la commande principale de la marketplace (loi de palette).",
+      "html": "<div class=\"ds-command-inv\"><code>/plugin marketplace add eRom/erom-marketplace</code><button type=\"button\" class=\"ds-copy-inv\">Copier</button></div>",
+      "css": ".ds-command-inv { display: flex; align-items: stretch; background: var(--color-ink, oklch(0.2 0.014 40)); color: var(--color-paper, oklch(0.885 0.056 43)); border: 1px solid var(--color-ink, oklch(0.2 0.014 40)); border-radius: 0; } .ds-command-inv code { flex: 1; min-width: 0; padding: 10px 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-ligatures: none; font-size: 0.8125rem; line-height: 1.375; overflow-wrap: anywhere; } .ds-copy-inv { padding: 0 12px; background: transparent; color: inherit; border: 0; border-left: 1px solid color-mix(in oklch, var(--color-paper, oklch(0.885 0.056 43)) 50%, transparent); cursor: pointer; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 650; font-variation-settings: 'wdth' 88; font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; } .ds-copy-inv:hover { background: var(--color-paper, oklch(0.885 0.056 43)); color: var(--color-ink, oklch(0.2 0.014 40)); } .ds-copy-inv:focus-visible { outline: 2px solid var(--color-paper, oklch(0.885 0.056 43)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Tampon « Copié »",
+      "kind": "custom",
+      "refersTo": "stamp",
+      "description": "Tampon encreur incliné qui s'abat sur le bouton de copie après une copie réussie.",
+      "html": "<div class=\"ds-stamp-host\"><span class=\"ds-stamp\">Copié</span></div>",
+      "css": ".ds-stamp-host { position: relative; height: 64px; } .ds-stamp { position: absolute; top: 50%; left: 50%; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 850; font-variation-settings: 'wdth' 80; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; color: var(--color-ink, oklch(0.2 0.014 40)); background: var(--color-paper, oklch(0.885 0.056 43)); border: 2px solid var(--color-ink, oklch(0.2 0.014 40)); outline: 1px solid var(--color-ink, oklch(0.2 0.014 40)); outline-offset: 2px; padding: 0.2rem 0.55rem; transform: translate(-50%, -50%) rotate(-7deg); animation: ds-stamp-press 220ms cubic-bezier(0.2, 0.9, 0.25, 1) both; } @keyframes ds-stamp-press { from { opacity: 0; transform: translate(-50%, -50%) rotate(-7deg) scale(1.55); } } @media (prefers-reduced-motion: reduce) { .ds-stamp { animation: none; } }"
+    },
+    {
+      "name": "Encadré",
+      "kind": "card",
+      "refersTo": "boxed-panel",
+      "description": "Aparté bordé d'un filet de 3px (l'ours de /contact, le Mode d'emploi de la marketplace).",
+      "html": "<aside class=\"ds-boxed\"><h2 class=\"ds-rubric\">Mode d'emploi</h2><p>Ajouter la marketplace dans Claude Code, puis installer un plugin avec la commande de son article.</p></aside>",
+      "css": ".ds-boxed { border: 3px solid var(--color-ink, oklch(0.2 0.014 40)); border-radius: 0; padding: 28px; color: var(--color-ink, oklch(0.2 0.014 40)); } .ds-boxed p { margin: 16px 0 0; font-size: 0.9375rem; line-height: 1.375; } .ds-rubric { margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 850; font-variation-settings: 'wdth' 80; font-size: 0.9375rem; line-height: 1.2; letter-spacing: 0.045em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Colonnes de journal",
+      "kind": "custom",
+      "refersTo": "body",
+      "description": "Récit serif en colonnes à filet, alinéas sans espace ; justifié et césuré seulement dès 64rem.",
+      "html": "<div class=\"ds-columns\" lang=\"fr\"><p>Vingt-cinq ans d'architecture lui ont laissé une certitude : un système échoue quand on oublie ses utilisateurs.</p><p>Son parcours est celui d'un architecte, de la Bbox TV à la migration d'un système d'information.</p></div>",
+      "css": ".ds-columns { columns: 2; column-gap: 2.5rem; column-rule: 1px solid color-mix(in oklch, var(--color-ink, oklch(0.2 0.014 40)) 70%, transparent); font-family: 'Source Serif 4', Georgia, serif; font-size: 1.0625rem; line-height: 1.58; color: var(--color-ink, oklch(0.2 0.014 40)); text-align: start; hyphens: manual; orphans: 3; widows: 3; } .ds-columns p { margin: 0; } .ds-columns p + p { text-indent: 1.4em; } @media (min-width: 64rem) { .ds-columns { text-align: justify; text-justify: inter-word; hyphens: auto; hyphenate-limit-chars: 6 3 3; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La page Portrait",
+    "overview": "Le site est la page Portrait qu'un quotidien consacrerait à Romain Ecarnot, imprimée sur le papier saumon des pages économiques. Tout vient de la presse écrite : un folio en capitales avec la date du jour, des filets d'encre qui ouvrent les rubriques, une titraille en grotesque condensée très grasse, un texte courant en serif dans des colonnes à alinéas, des chiffres tabulaires, des encadrés, des planches imprimées. Il n'y a qu'une encre et qu'un papier.\n\nLa densité est celle d'une page de journal lue sur écran : une information par ligne pleine largeur, séparée d'un filet, et un seul bloc tenu en noir inversé par page pour dire où aller. Le geste animé appartient au lecteur, pas à la page : un crayon qui souligne, coche ce qui a été lu et tamponne ce qui a été copié. Le site refuse l'arrangement linktree par défaut (avatar centré, pile de boutons sur fond sombre).",
+    "keyCharacteristics": [
+      "Deux couleurs au sens strict : papier saumon et encre noire chaude, avec leurs deux nuances.",
+      "Titraille grotesque condensée (Archivo, axe `wdth`), texte serif (Source Serif 4, axe `opsz`).",
+      "Structure par filets d'encre, jamais par cartes, ombres ou arrondis.",
+      "Noir inversé réservé à l'action principale de chaque page.",
+      "Seul mouvement : le crayon du lecteur, coupé sous `prefers-reduced-motion`.",
+      "Typographie française appliquée à toute copie (apostrophe courbe, espaces insécables)."
+    ],
+    "rules": [
+      {
+        "name": "The Reversed Ink Rule",
+        "body": "Le noir inversé (texte papier sur fond encre) est réservé à l'action principale de la page, une seule par page : le lien « Suite : le CV complet » sur l'accueil, le bloc courriel sur `/contact`, la commande « ajouter la marketplace » sur `/claude-marketplace`. Toute autre action reste encre sur papier.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Ink Rule",
+        "body": "Aucune autre teinte : pas d'accent, pas de couleur d'état, pas de lien bleu. Une information qui demanderait une couleur passe par la graisse, le filet ou la position.",
+        "section": "colors"
+      },
+      {
+        "name": "The Real Command Rule",
+        "body": "La monospace est réservée aux commandes réelles qu'on copie et colle dans un terminal. Une adresse, une URL ou une version reste en grotesque.",
+        "section": "typography"
+      },
+      {
+        "name": "The French Typography Rule",
+        "body": "Toute copie visible passe par `fr()` : apostrophe courbe, espace fine insécable avant ; ! ? et %, insécable avant les deux-points et dans les guillemets français. Les noms propres sont protégés de la césure.",
+        "section": "typography"
+      },
+      {
+        "name": "The Width Hierarchy Rule",
+        "body": "La grotesque se condense avec l'importance : 70 pour le titre, 74 pour la citation, 80 pour les rubriques, 84 pour les noms de liens, 88 pour le folio, 92 pour les légendes.",
+        "section": "typography"
+      },
+      {
+        "name": "The Justify at 64rem Rule",
+        "body": "Les colonnes de journal sont justifiées et césurées automatiquement (`hyphens: auto`, 6 caractères minimum, 3 de part et d'autre) seulement à partir de 64rem. En dessous, texte en drapeau et césure manuelle uniquement : sur une colonne étroite, la justification ouvrirait des lézardes.",
+        "section": "layout"
+      },
+      {
+        "name": "The Printed Plate Rule",
+        "body": "Les planches fusain des plugins et le QR code sont imprimés sur le saumon : `mix-blend-mode: multiply` et `filter: grayscale(1) contrast(1.04)`, pour que leur blanc prenne la teinte du papier. Le portrait noir et blanc (`public/portrait.jpg`, l'original fourni par Romain, en grand sur l'accueil et dans l'image de partage ; `public/avatar.jpg`, son recadrage carré, pour la vignette de contact et le JSON-LD) n'entre jamais dans cette règle : il est affiché tel quel, jamais filtré, recadré par `object-position` seulement, jamais régénéré.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Rule Weight Rule",
+        "body": "Trois épaisseurs, trois sens : 3px ouvre, 1px sépare, le pointillé signale une rupture. Pas de quatrième.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Pencil Rule",
+        "body": "Le mouvement appartient au lecteur : il n'existe qu'en réponse à un geste (survol, focus, lecture, copie) et il est entièrement coupé sous `prefers-reduced-motion`. Aucune animation d'entrée, de défilement ou d'attente.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do réserver le noir inversé à une seule action par page, celle qui mène au but de la page.",
+      "Do structurer par filets d'encre (3px pour ouvrir, 1px pour séparer, pointillé pour une rupture), une information par ligne pleine largeur.",
+      "Do imprimer toute illustration sur le papier (`multiply`, niveaux de gris) et laisser le portrait (`public/portrait.jpg`, `public/avatar.jpg`) intact.",
+      "Do passer toute copie visible par `fr()` et protéger les noms propres de la césure.",
+      "Do justifier et césurer les colonnes seulement à partir de 64rem.",
+      "Do donner à chaque nouveau geste animé la forme du crayon et le couper sous `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "Don't ajouter une teinte : pas d'accent, pas de vert de disponibilité, pas de dégradé.",
+      "Don't composer en cartes arrondies à ombre portée, ni en grille de cartes identiques.",
+      "Don't employer la monospace pour autre chose qu'une commande réelle.",
+      "Don't appliquer un filtre, un recadrage génératif ou un traitement de planche au portrait.",
+      "Don't justifier un texte sur une colonne étroite.",
+      "Don't revenir au linktree par défaut : avatar centré et pile de boutons sur fond sombre."
+    ]
+  }
+}

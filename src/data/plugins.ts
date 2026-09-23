@@ -7,6 +7,8 @@ export interface MarketplacePlugin {
   imageUrl: string | null;
   category: string;
   installCommand: string;
+  /** Version brève, courte et humaine, affichée dans la rubrique « En bref » du cahier. */
+  blurb?: string;
 }
 
 export const MARKETPLACE_ADD_COMMAND = "/plugin marketplace add eRom/erom-marketplace";
@@ -55,6 +57,8 @@ export const PLUGINS: MarketplacePlugin[] = [
     imageUrl: "/marketplace/erom-vision.webp",
     category: "Design UI",
     installCommand: "claude plugin install erom-vision@erom-marketplace",
+    blurb:
+      "Aucun écran ne sort sans un second regard. Gemini l'observe au repos, au survol, au clic, puis tranche sur dix critères, preuves à l'appui.",
   },
   {
     name: "Image",
@@ -66,6 +70,8 @@ export const PLUGINS: MarketplacePlugin[] = [
     imageUrl: "/marketplace/erom-image.webp",
     category: "Génération média",
     installCommand: "claude plugin install erom-image@erom-marketplace",
+    blurb:
+      "Un atelier d'imprimeur de poche : il dessine, écrit juste dans l'image, détoure sur fond transparent, signe d'un filigrane discret et relit chaque QR code avant de le rendre.",
   },
   {
     name: "Gemini",
@@ -77,6 +83,8 @@ export const PLUGINS: MarketplacePlugin[] = [
     imageUrl: "/marketplace/erom-gemini.webp",
     category: "Multimodal",
     installCommand: "claude plugin install erom-gemini@erom-marketplace",
+    blurb:
+      "Là où Claude reste sourd, Gemini écoute. Une vidéo devient une suite de scènes horodatées, un enregistrement un texte fidèle, un scan du markdown propre.",
   },
   {
     name: "Insight",
@@ -88,6 +96,8 @@ export const PLUGINS: MarketplacePlugin[] = [
     imageUrl: "/marketplace/erom-insight.webp",
     category: "Audit & Veille",
     installCommand: "claude plugin install erom-insight@erom-marketplace",
+    blurb:
+      "Lire le code des autres avant de lui faire confiance. Il garde ce qui mérite d'être repris, confronte les promesses au code réel et cherche la faille avant l'installation.",
   },
   {
     name: "Dev-plugin",
@@ -99,6 +109,8 @@ export const PLUGINS: MarketplacePlugin[] = [
     imageUrl: "/marketplace/erom-dev-plugin.webp",
     category: "Outillage",
     installCommand: "claude plugin install erom-dev-plugin@erom-marketplace",
+    blurb:
+      "Du dépôt vide à la marketplace : la charpente, le portrait au fusain, puis une version bien numérotée. Les planches de ce cahier sortent de son atelier.",
   },
   {
     name: "SEO",
@@ -110,5 +122,7 @@ export const PLUGINS: MarketplacePlugin[] = [
     imageUrl: "/marketplace/erom-seo.webp",
     category: "SEO & GEO",
     installCommand: "claude plugin install erom-seo@erom-marketplace",
+    blurb:
+      "Être trouvé par les moteurs comme par les IA, sans louer d'outil au mois : une stratégie, un audit daté, des corrections une à une et quinze cases prouvées.",
   },
 ];

@@ -1,9 +1,14 @@
+import { ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Github, Sparkles } from "lucide-react";
-import { PLUGINS } from "@/data/plugins";
-import { PluginCard } from "@/components/PluginCard";
-import { MarketplaceHeaderCommand } from "@/components/MarketplaceHeaderCommand";
+import { Colophon } from "@/components/Colophon";
+import { CopyCommand } from "@/components/CopyCommand";
+import { Folio } from "@/components/Folio";
+import { PluginArticle } from "@/components/PluginArticle";
+import { TrackedLink } from "@/components/TrackedLink";
+import { MARKETPLACE_ADD_COMMAND, PLUGINS } from "@/data/plugins";
+import { fr } from "@/lib/typography";
+
+const MARKETPLACE_REPO_URL = "https://github.com/eRom/erom-marketplace";
 
 export const metadata: Metadata = {
   title: "Marketplace Plugins Claude Code - Romain Ecarnot",
@@ -120,104 +125,110 @@ export default function MarketplacePage() {
     },
   };
 
+  // Hiérarchie de cahier : un article de tête, deux articles, puis les brèves.
+  const [leadPlugin, ...otherPlugins] = PLUGINS;
+  const featuredPlugins = otherPlugins.slice(0, 2);
+  const briefPlugins = otherPlugins.slice(2);
+
   return (
-    <div className="relative min-h-screen bg-[#09090b] text-zinc-100 selection:bg-zinc-800 selection:text-zinc-100 flex flex-col items-center justify-between p-4 sm:p-6 lg:p-8">
+    <>
       {/* Schema.org CollectionPage & ItemList */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Subtle top ambient illumination */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-96 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,119,198,0.15),rgba(255,255,255,0))]"
-        aria-hidden="true"
-      />
+      <Folio current="plugins" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-8 sm:gap-12 py-8 sm:py-12">
-        {/* Navigation bar */}
-        <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Retour à l&apos;accueil</span>
-          </Link>
-
-          <a
-            href="https://github.com/eRom/erom-marketplace"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs font-medium text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
-          >
-            <Github className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Dépôt marketplace</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />
-          </a>
-        </div>
-
-        {/* Page Header */}
-        <header className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
-          <div className="flex flex-col items-center gap-2">
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-100">
-              Marketplace eRom
+      <main id="contenu" className="mx-auto w-full max-w-[88rem] px-4 pb-16 sm:px-8 lg:px-10">
+        <header className="grid gap-x-12 gap-y-8 pt-8 pb-10 lg:grid-cols-12 lg:pt-10">
+          <div className="flex flex-col gap-5 lg:col-span-7">
+            <h1 className="type-headline text-[clamp(2.75rem,8.6vw,6rem)]">
+              Neuf plugins pour Claude Code
             </h1>
-            <p className="text-xs sm:text-sm text-zinc-400 max-w-lg leading-relaxed">
-              Une suite d&apos;outils taillés pour l&apos;efficacité, la sobriété logicielle
-              et l&apos;orchestration intelligente, développés par Romain Ecarnot.
+            <p className="type-deck max-w-[40ch] text-[clamp(1.1875rem,1.8vw,1.5rem)]">
+              {fr(
+                "Une suite d'outils taillés pour l'efficacité, la sobriété logicielle et l'orchestration intelligente, écrits par Romain Ecarnot. Open source ; chacun s'installe en une commande.",
+              )}
             </p>
           </div>
 
-          {/* Quick install guide */}
-          <div className="w-full mt-2">
-            <MarketplaceHeaderCommand />
-          </div>
+          <aside
+            aria-labelledby="mode-emploi"
+            className="self-end border-[3px] border-ink p-5 sm:p-6 lg:col-span-5"
+          >
+            <h2 id="mode-emploi" className="type-rubric">
+              {fr("Mode d'emploi")}
+            </h2>
+            <ol className="mt-4 flex flex-col gap-4">
+              <li className="grid grid-cols-[2rem_1fr] gap-x-3">
+                <span className="tabular font-grotesk text-3xl leading-none font-black [font-variation-settings:'wdth'_72]">
+                  1
+                </span>
+                <div className="flex min-w-0 flex-col gap-2.5">
+                  <p className="text-[0.9375rem] leading-snug">
+                    Ajouter la marketplace dans Claude Code.
+                  </p>
+                  <CopyCommand
+                    command={MARKETPLACE_ADD_COMMAND}
+                    label="ajouter la marketplace"
+                    tone="inverse"
+                  />
+                </div>
+              </li>
+              <li className="grid grid-cols-[2rem_1fr] gap-x-3">
+                <span className="tabular font-grotesk text-3xl leading-none font-black [font-variation-settings:'wdth'_72]">
+                  2
+                </span>
+                <p className="text-[0.9375rem] leading-snug">
+                  Installer un plugin avec la commande de son article, ci-dessous.
+                </p>
+              </li>
+            </ol>
+            <TrackedLink
+              href={MARKETPLACE_REPO_URL}
+              external
+              className="group type-folio mt-5 inline-flex items-center gap-1.5 border-t border-ink pt-3"
+            >
+              <span className="pencil">Dépôt de la marketplace</span>
+              <ArrowUpRight aria-hidden="true" className="size-3.5" strokeWidth={2} />
+            </TrackedLink>
+          </aside>
         </header>
 
-        {/* Responsive Grid: 4 columns on desktop (4x3), 3 on laptop, 2 on tablet, 1 on mobile */}
-        <main
-          role="main"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
-        >
-          {PLUGINS.map((plugin) => (
-            <PluginCard key={plugin.name} plugin={plugin} />
-          ))}
-        </main>
+        <div className="border-t-[3px] border-ink pt-8">
+          <PluginArticle plugin={leadPlugin} size="lead" />
+        </div>
 
-        {/* Footer */}
-        <footer
-          className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-mono"
-          role="contentinfo"
-        >
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-3.5 h-3.5 text-zinc-400" />
-            <span>Romain Ecarnot · Nantes, France</span>
+        <div className="mt-12 grid gap-y-12 border-t-[3px] border-ink pt-8 md:grid-cols-2">
+          {featuredPlugins.map((plugin, index) => (
+            <div
+              key={plugin.name}
+              className={index > 0 ? "md:border-l md:border-ink md:pl-10" : "md:pr-10"}
+            >
+              <PluginArticle plugin={plugin} size="feature" />
+            </div>
+          ))}
+        </div>
+
+        <section aria-labelledby="en-bref" className="mt-14">
+          <h2 id="en-bref" className="type-rubric border-t-[3px] border-ink pt-2">
+            En bref
+          </h2>
+          <div className="mt-2 grid gap-y-2 lg:grid-cols-2 lg:[&>*:nth-child(even)]:border-l lg:[&>*:nth-child(even)]:pl-10 lg:[&>*:nth-child(odd)]:pr-10">
+            {briefPlugins.map((plugin, index) => (
+              <div
+                key={plugin.name}
+                className={`border-ink py-6 ${index > 0 ? "border-t" : ""} ${index === 1 ? "lg:border-t-0" : ""}`}
+              >
+                <PluginArticle plugin={plugin} size="brief" />
+              </div>
+            ))}
           </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              className="hover:text-zinc-300 transition-colors underline-offset-4 hover:underline"
-            >
-              Accueil
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-zinc-300 transition-colors underline-offset-4 hover:underline"
-            >
-              Contact
-            </Link>
-            <a
-              href="https://github.com/eRom/erom-marketplace"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-zinc-300 transition-colors underline-offset-4 hover:underline"
-            >
-              GitHub Marketplace
-            </a>
-          </div>
-        </footer>
-      </div>
-    </div>
+        </section>
+      </main>
+
+      <Colophon />
+    </>
   );
 }
