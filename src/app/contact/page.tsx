@@ -65,8 +65,7 @@ const MASTHEAD = [
   { term: "Adresse", description: "Nantes, France" },
   { term: "Courriel", description: CONTACT_EMAIL },
   { term: "Langues", description: "Français, anglais" },
-  { term: "Statut", description: "RQTH, reconnaissance de la qualité de travailleur handicapé" },
-  { term: "Hébergement", description: "Vercel Inc." },
+  { term: "Statut", description: "RQTH" },
 ];
 
 export default function ContactPage() {
@@ -137,7 +136,7 @@ export default function ContactPage() {
         <div className="flex flex-col gap-8 lg:col-span-7">
           <header className="flex flex-col gap-5">
             <h1 className="type-headline text-[clamp(2.75rem,9vw,6rem)]">Prendre contact</h1>
-            <p className="type-deck max-w-[40ch] text-[clamp(1.1875rem,1.8vw,1.5rem)]">
+            <p className="type-deck max-w-[60ch] text-[clamp(1.1875rem,1.8vw,1.5rem)]">
               {fr(
                 "Disponible pour des missions d'accompagnement aux usages du numérique et de l'IA, du conseil ou des échanges professionnels.",
               )}
@@ -148,18 +147,12 @@ export default function ContactPage() {
           <section aria-label="Courriel" className="bg-ink px-5 py-6 text-paper sm:px-7 sm:py-7">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="block font-grotesk text-[clamp(1.5rem,5.4vw,3.25rem)] leading-none font-black break-words [font-variation-settings:'wdth'_70] hover:underline hover:decoration-2 hover:underline-offset-8 focus-visible:outline-paper"
+              className="block font-grotesk text-[clamp(1.5rem,5.4vw,3.25rem)] leading-none font-black break-words [font-variation-settings:'wdth'_60] hover:underline hover:decoration-2 hover:underline-offset-8 focus-visible:outline-paper"
             >
               {CONTACT_EMAIL}
             </a>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="type-folio inline-flex items-center gap-2 border border-paper px-3.5 py-2.5 transition-colors hover:bg-paper hover:text-ink focus-visible:outline-paper"
-              >
-                Écrire un courriel
-                <ArrowUpRight aria-hidden="true" className="size-4" strokeWidth={2} />
-              </a>
+
               <CopyButton
                 text={CONTACT_EMAIL}
                 label="Copier l'adresse électronique"

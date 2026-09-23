@@ -8,13 +8,11 @@ export function Colophon() {
       <div className="rule-heavy" />
       <div className="type-caption flex flex-col gap-1.5 pt-3 sm:flex-row sm:items-baseline sm:justify-between">
         <p>
-          Romain Ecarnot · Nantes, France ·{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="pencil text-ink">
-            {CONTACT_EMAIL}
-          </a>
+          Romain Ecarnot · Nantes, France
+
         </p>
         <p>
-          {fr("Version pour les IA : ")}
+          {fr("Version pour les agents : ")}
           <a href="/llms.txt" className="pencil text-ink">
             llms.txt
           </a>{" "}
