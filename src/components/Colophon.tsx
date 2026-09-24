@@ -1,4 +1,3 @@
-import { CONTACT_EMAIL } from "@/data/profile";
 import { fr } from "@/lib/typography";
 
 // Pied de page façon ours de journal : qui, où, et la version lisible par les machines.
