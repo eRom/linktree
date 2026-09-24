@@ -12,7 +12,7 @@ export function Colophon() {
 
         </p>
         <p>
-          {fr("Version pour les agents : ")}
+          {fr("Version pour les agents : ")}<strong>WebMCP</strong> ·{" "}
           <a href="/llms.txt" className="pencil text-ink">
             llms.txt
           </a>{" "}
