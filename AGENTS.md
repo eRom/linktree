@@ -51,7 +51,7 @@ linktree/
 │   │   ├── globals.css        # Jetons du monde « page Portrait » (Tailwind v4)
 │   │   ├── layout.tsx         # Layout racine, balises SEO globales & Schema.org
 │   │   └── page.tsx           # Page d'accueil : la page Portrait
-│   ├── components/            # Folio, liens au crayon, commandes copiables, articles
+│   ├── components/            # Folio, liens au crayon, commandes copiables, articles, outils WebMCP
 │   ├── data/                  # Plugins et faits du parcours (repris du CV)
 │   └── lib/                   # Utilitaires (typographie française, date d'édition)
 ├── AGENTS.md                  # Ce document de référence
@@ -82,6 +82,7 @@ Bing Webmaster Tools lève un avertissement sévère si un titre dépasse 70 car
 * `src/app/contact/page.tsx` intègre un schéma `ContactPage` avec fil d'Ariane (`BreadcrumbList`).
 * `src/app/claude-marketplace/page.tsx` intègre un schéma `CollectionPage` + `ItemList` avec les 9 `SoftwareApplication` et `BreadcrumbList`.
 * Découverte IA : fichiers `public/llms.txt` et `public/llms-full.txt` maintenus à jour à la racine, et liens de découverte dans le `<head>` (`ai-catalog` RFC 8615 et `alternate` type `text/plain`).
+* WebMCP : `src/components/WebMcpTools.tsx` expose aux agents du navigateur trois outils en lecture seule (`get_profile`, `list_plugins`, `get_contact`) via `document.modelContext`, nourris par `src/data/`. Activé en production par le jeton d'origin trial en dur dans `src/app/layout.tsx` (public, lié à `https://www.romain-ecarnot.com`), **qui expire le 17/11/2026** : à renouveler sur https://developer.chrome.com/origintrials/. En local, activer `chrome://flags/#enable-webmcp-testing`.
 
 ### IndexNow & Sitemaps
 * Clé IndexNow hébergée sur `https://www.romain-ecarnot.com/e8c4a90f1d7b4256a938c11e74f329de.txt`.
