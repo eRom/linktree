@@ -6,7 +6,7 @@
  * encre) est réservé à l'action principale de chaque page.
  */
 @theme {
-  --color-paper: oklch(0.885 0.056 43);
+  --color-paper: oklch(0.885 0.022 43);
   --color-paper-deep: oklch(0.83 0.072 40);
   --color-ink: oklch(0.2 0.014 40);
   --color-ink-soft: oklch(0.4 0.035 42);
