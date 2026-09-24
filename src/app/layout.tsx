@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 // Grotesque de titraille (axe de largeur pour les titres condensés) et serif de texte en colonnes.
@@ -223,6 +225,8 @@ export default function RootLayout({
           Aller au contenu
         </a>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
