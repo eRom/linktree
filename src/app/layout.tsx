@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { WebMcpTools } from "@/components/WebMcpTools";
 import "./globals.css";
 
 // Grotesque de titraille (axe de largeur pour les titres condensés) et serif de texte en colonnes.
@@ -88,6 +89,11 @@ export const metadata: Metadata = {
   },
 };
 
+// Jeton public de l'origin trial WebMCP, lié à https://www.romain-ecarnot.com, expire le 17/11/2026.
+// Renouveler sur https://developer.chrome.com/origintrials/ avant cette date.
+const WEBMCP_ORIGIN_TRIAL_TOKEN =
+  "AlQU3ci8lpdE+mO74UWKurLzEw/z2G7D8trGhcSwb9CylwcwnHrwlincf7pfOnGAd00D2oI9Ua6LjKYrphMn8gsAAABWeyJvcmlnaW4iOiJodHRwczovL3d3dy5yb21haW4tZWNhcm5vdC5jb206NDQzIiwiZmVhdHVyZSI6IldlYk1DUCIsImV4cGlyeSI6MTc5NDg3MzYwMH0=";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -96,6 +102,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${archivo.variable} ${sourceSerif.variable}`}>
       <head>
+        <meta httpEquiv="origin-trial" content={WEBMCP_ORIGIN_TRIAL_TOKEN} />
         {/* JSON-LD Schema.org (Google ProfilePage + Person Graph) */}
         <script
           type="application/ld+json"
@@ -225,6 +232,7 @@ export default function RootLayout({
           Aller au contenu
         </a>
         {children}
+        <WebMcpTools />
         <Analytics />
         <SpeedInsights />
       </body>
