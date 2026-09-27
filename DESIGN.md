@@ -4,7 +4,7 @@ description: La page Portrait d'un quotidien, imprimée sur le papier saumon des
 colors:
   ink: "oklch(0.2 0.014 40)"
   ink-soft: "oklch(0.4 0.035 42)"
-  paper: "oklch(0.885 0.056 43)"
+  paper: "oklch(0.945 0.004 75)"
   paper-deep: "oklch(0.83 0.072 40)"
 typography:
   display:
