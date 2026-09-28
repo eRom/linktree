@@ -18,11 +18,19 @@ Romain Ecarnot est un expert technique, vulgarisateur et accompagnateur basé à
 ### Résilience & Sensibilisation
 Après avoir surmonté un accident vasculaire cérébral (AVC), Romain a reconstruit sa trajectoire professionnelle avec détermination (bénéficiaire RQTH). Cette épreuve fondatrice nourrit aujourd'hui son engagement pour la pédagogie, l'inclusion dans la tech et la résilience opérationnelle des projets.
 
+### Showreel « Sans détour »
+
+- **Page officielle** : https://www.romain-ecarnot.com/showreel
+- **Vidéo paysage 16:9 (1920 x 1080, 33 s, 27,6 Mo)** : https://video.romain-ecarnot.com/sans-detour-v4.mp4
+- **Vidéo portrait 9:16 (1080 x 1920, 33 s, 21,8 Mo)** : https://video.romain-ecarnot.com/sans-detour-portrait-v5.mp4
+- **Résumé** : le parcours de Romain Ecarnot en 33 secondes. Un redémarrage en ligne de commande (`romain --reboot`), vingt ans de métier (Flash, 3D, Bbox TV, AWS, OPEN, CTO et DPO, cloud), l'AVC de 2025 qui arrête tout, puis réapprendre, observer, construire : l'atelier d'agents IA (Claude, Gemini, Mistral, DeepSeek, Kimi, GLM), Cruchot et neuf plugins pour Claude Code. Chute : « Romain Ecarnot, sans détour. »
+
 ---
 
 ## 2. Points de Contact & Écosystème Officiel
 
 - **Hub principal** : https://www.romain-ecarnot.com/
+- **Showreel « Sans détour »** : https://www.romain-ecarnot.com/showreel
 - **Marketplace Claude Code** : https://www.romain-ecarnot.com/claude-marketplace
 - **Page de contact** : https://www.romain-ecarnot.com/contact
 - **Email direct** : contact@romain-ecarnot.com

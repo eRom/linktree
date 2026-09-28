@@ -3,6 +3,14 @@
 import { useEffect } from "react";
 import { ADDRESSES, CONTACT_EMAIL, MILESTONES, TOOLS } from "@/data/profile";
 import { MARKETPLACE_ADD_COMMAND, PLUGINS } from "@/data/plugins";
+import {
+  CHAPTERS,
+  SHOWREEL_DURATION_SECONDS,
+  SHOWREEL_LANDSCAPE,
+  SHOWREEL_PAGE_URL,
+  SHOWREEL_PORTRAIT,
+  SHOWREEL_TITLE,
+} from "@/data/showreel";
 
 // WebMCP (document.modelContext) : expose aux agents IA du navigateur quelques
 // outils en lecture seule, nourris par les mêmes données que les pages.
@@ -95,6 +103,27 @@ const WEBMCP_TOOLS: ModelContextTool[] = [
         plugins: PLUGINS.map(({ name, title, category, installCommand }) => ({ name, title, category, installCommand })),
       });
     },
+  },
+  {
+    name: "get_showreel",
+    description:
+      "Showreel « Sans détour » de Romain Ecarnot : vidéo de 33 secondes sur son parcours, en paysage et en portrait, avec ses chapitres horodatés.",
+    inputSchema: EMPTY_SCHEMA,
+    annotations: { readOnlyHint: true },
+    execute: async () =>
+      asText({
+        title: SHOWREEL_TITLE,
+        page: SHOWREEL_PAGE_URL,
+        durationSeconds: SHOWREEL_DURATION_SECONDS,
+        variants: [SHOWREEL_LANDSCAPE, SHOWREEL_PORTRAIT].map(({ label, url, width, height }) => ({ label, url, width, height })),
+        chapters: CHAPTERS.map(({ start, end, title, summary }) => ({
+          start,
+          end,
+          title,
+          summary,
+          url: `${SHOWREEL_PAGE_URL}?t=${start}`,
+        })),
+      }),
   },
   {
     name: "get_contact",

@@ -35,6 +35,7 @@ linktree/
 │   ├── llms.txt               # Documentation sémantique pour agents IA & LLMs
 │   ├── manifest.json          # Manifest PWA
 │   ├── og-image.jpg           # Bannière de partage OpenGraph & Twitter Cards
+│   ├── showreel-poster-*  # Affiches du showreel (16:9 et 9:16), dernière image du film
 │   ├── portrait.jpg           # Portrait N&B original (accueil, image de partage)
 │   ├── robots.txt             # Directives de crawl + bots IA (GPTBot, ClaudeBot, etc.)
 │   └── sitemap.xml            # Plan de site XML canonique
@@ -48,6 +49,8 @@ linktree/
 │   │   │   └── page.tsx       # Cahier des plugins Claude Code (/claude-marketplace)
 │   │   ├── contact/
 │   │   │   └── page.tsx       # Page de contact dédiée (/contact)
+│   │   ├── showreel/
+│   │   │   └── page.tsx       # Showreel « Sans détour » (/showreel)
 │   │   ├── globals.css        # Jetons du monde « page Portrait » (Tailwind v4)
 │   │   ├── layout.tsx         # Layout racine, balises SEO globales & Schema.org
 │   │   └── page.tsx           # Page d'accueil : la page Portrait
@@ -73,6 +76,8 @@ Bing Webmaster Tools lève un avertissement sévère si un titre dépasse 70 car
   `"Contact - Romain Ecarnot | Passeur du numérique"` (48 caractères).
 * **Marketplace (`src/app/claude-marketplace/page.tsx`) :**
   `"Marketplace Plugins Claude Code - Romain Ecarnot"` (49 caractères).
+* **Showreel (`src/app/showreel/page.tsx`) :**
+  `"Showreel - Romain Ecarnot | Sans détour"` (39 caractères).
 
 ### Microdonnées & Référencement sémantique
 * `src/app/layout.tsx` intègre un graphe JSON-LD Schema.org complet :
@@ -81,8 +86,9 @@ Bing Webmaster Tools lève un avertissement sévère si un titre dépasse 70 car
   - `WebSite` (`#website`)
 * `src/app/contact/page.tsx` intègre un schéma `ContactPage` avec fil d'Ariane (`BreadcrumbList`).
 * `src/app/claude-marketplace/page.tsx` intègre un schéma `CollectionPage` + `ItemList` avec les 9 `SoftwareApplication` et `BreadcrumbList`.
+* `src/app/showreel/page.tsx` intègre `WebPage` + `VideoObject` (deux `encoding` paysage/portrait, `transcript`, un `Clip` par chapitre avec `?t=`), nourris par `src/data/showreel.ts`. Les vidéos sont servies par `video.romain-ecarnot.com` ; le sitemap porte l'extension `video:`.
 * Découverte IA : fichiers `public/llms.txt` et `public/llms-full.txt` maintenus à jour à la racine, et liens de découverte dans le `<head>` (`ai-catalog` RFC 8615 et `alternate` type `text/plain`).
-* WebMCP : `src/components/WebMcpTools.tsx` expose aux agents du navigateur trois outils en lecture seule (`get_profile`, `list_plugins`, `get_contact`) via `document.modelContext`, nourris par `src/data/`. Activé en production par le jeton d'origin trial en dur dans `src/app/layout.tsx` (public, lié à `https://www.romain-ecarnot.com`), **qui expire le 17/11/2026** : à renouveler sur https://developer.chrome.com/origintrials/. En local, activer `chrome://flags/#enable-webmcp-testing`.
+* WebMCP : `src/components/WebMcpTools.tsx` expose aux agents du navigateur quatre outils en lecture seule (`get_profile`, `list_plugins`, `get_showreel`, `get_contact`) via `document.modelContext`, nourris par `src/data/`. Activé en production par le jeton d'origin trial en dur dans `src/app/layout.tsx` (public, lié à `https://www.romain-ecarnot.com`), **qui expire le 17/11/2026** : à renouveler sur https://developer.chrome.com/origintrials/. En local, activer `chrome://flags/#enable-webmcp-testing`.
 
 ### IndexNow & Sitemaps
 * Clé IndexNow hébergée sur `https://www.romain-ecarnot.com/e8c4a90f1d7b4256a938c11e74f329de.txt`.

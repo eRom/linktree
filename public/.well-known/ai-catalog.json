@@ -24,6 +24,25 @@
       ]
     },
     {
+      "identifier": "urn:air:romain-ecarnot.com:media:showreel",
+      "displayName": "Showreel « Sans détour »",
+      "type": "text/html",
+      "description": "Vidéo de 33 secondes sur le parcours de Romain Ecarnot : vingt ans de métier, l'AVC de 2025, puis la reconstruction et un atelier d'agents IA. Deux cadrages : paysage 16:9 (https://video.romain-ecarnot.com/sans-detour-v4.mp4) et portrait 9:16 (https://video.romain-ecarnot.com/sans-detour-portrait-v5.mp4).",
+      "url": "https://www.romain-ecarnot.com/showreel",
+      "tags": [
+        "showreel",
+        "video",
+        "parcours",
+        "resilience",
+        "ai-agents"
+      ],
+      "representativeQueries": [
+        "showreel de Romain Ecarnot",
+        "le parcours de Romain Ecarnot en vidéo",
+        "reprise de carrière dans la tech après un AVC en vidéo"
+      ]
+    },
+    {
       "identifier": "urn:air:romain-ecarnot.com:profile:llms",
       "displayName": "Romain Ecarnot - Profil & Connaissances IA",
       "type": "application/agent-skills+md",

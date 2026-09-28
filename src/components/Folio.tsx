@@ -2,20 +2,21 @@ import Link from "next/link";
 import { EditionDate } from "@/components/EditionDate";
 import { editionOf } from "@/lib/edition";
 
-export type Section = "portrait" | "plugins" | "contact";
+export type Section = "portrait" | "showreel" | "plugins" | "contact";
 
 const SECTIONS: { id: Section; label: string; href: string }[] = [
   { id: "portrait", label: "Portrait", href: "/" },
+  { id: "showreel", label: "Showreel", href: "/showreel" },
   { id: "plugins", label: "Plugins", href: "/claude-marketplace" },
   { id: "contact", label: "Contact", href: "/contact" },
 ];
 
-// Folio de journal : date de l'édition à gauche, sommaire des trois pages à droite, double filet dessous.
+// Folio de journal : date de l'édition à gauche, sommaire des quatre pages à droite, double filet dessous.
 export function Folio({ current }: { current: Section }) {
   return (
     <header className="relative mx-auto w-full max-w-[88rem] px-4 pt-3 sm:px-8 lg:px-10">
-      <div className="type-folio flex items-baseline justify-between gap-4 pb-2">
-        <p className="flex min-w-0 items-baseline gap-2">
+      <div className="type-folio flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1.5 pb-2">
+        <p className="flex min-w-0 items-baseline gap-2 whitespace-nowrap">
           <EditionDate fallback={editionOf(new Date())} />
           <span aria-hidden="true" className="hidden sm:inline">
             ·

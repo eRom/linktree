@@ -5,6 +5,7 @@ const URL_LIST = [
   `https://${HOST}/`,
   `https://${HOST}/contact`,
   `https://${HOST}/claude-marketplace`,
+  `https://${HOST}/showreel`,
 ];
 
 async function submitIndexNow() {
