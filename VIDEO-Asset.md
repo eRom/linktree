@@ -1,59 +1,102 @@
-# Note Stratégique SEO & GEO : Showreel « Sans détour »
+# Note Stratégique SEO & GEO : Showreel « Sans détour » (Bi-Format Desktop & Mobile)
 
-**Asset vidéo :** `https://video.romain-ecarnot.com/sans-detour-v4.mp4`  
+**Assets vidéo hébergés :**
+* **Desktop (Paysage 16:9) :** `https://video.romain-ecarnot.com/sans-detour-v4.mp4`
+* **Mobile (Portrait 9:16) :** `https://video.romain-ecarnot.com/sans-detour-portrait-v5.mp4`
+
 **Cible :** Nouvelle page `/showreel` (ou intégration dédiée) sur `romain-ecarnot.com`  
 **Auteur :** Antigravity (Partenaire technique de Romain Ecarnot)  
-**Date :** 28 septembre 2026  
+**Date de mise à jour :** 28 septembre 2026  
 
 ---
 
-## 1. Analyse Technique et Sémantique de l'Asset
+## 1. Analyse Technique Comparative des 2 Déclinaisons
 
-L'analyse de l'asset brut (via flux HTTP et sondage direct) révèle les caractéristiques suivantes :
+L'inspection directe des deux flux MP4 hébergés sur Cloudflare confirme une parfaite synchronisation temporelle (33,00 secondes exactes), avec une adaptation spatiale dédiée pour chaque type d'écran :
 
-### Données Techniques Réelles
-* **Durée exacte :** 33,00 secondes (notation ISO 8601 : `PT33S` ou `PT0M33S`).
-* **Format & Conteneur :** MP4 (H.264 High Profile / AAC-LC stéréo 48 kHz).
-* **Définition :** 1920 × 1080 (16:9 Full HD), 30 fps progressif.
-* **Poids & Bande passante :** 27,56 Mo (~6,68 Mbps de débit moyen).
-* **Moteur de rendu :** Hyperframes (v0.8.81).
-* **Hébergement :** Cloudflare (`video.romain-ecarnot.com`).
-
-### Découpage Chronologique du Contenu (Timeline)
-La vidéo ne contient pas de voix off mais un sound design percutant (métronome initial, pulsation synthétique, drop électronique cadencé) accompagnant une narration visuelle par écrans typographiques et graphiques :
-
-| Timecode | Segment visuel | Contenu & Message véhiculé |
+| Critère technique | Déclinaison Desktop (v4) | Déclinaison Mobile (v5) |
 | :--- | :--- | :--- |
-| `00:00 - 00:06` | **Terminal CLI (Nantes)** | `SANS DÉTOUR • DEMO REEL` - `47.2184° N • 1.5536° W • NANTES`. Invite de commande `> romain --reboot` avec curseur orange clignotant. |
-| `00:07 - 00:15` | **2011 : Bbox TV** | `BBOX TV` - `architecte logiciel · Bouygues Telecom · Paris`. Année `2011` en haut à droite. Démonstration des racines d'architecte de systèmes distribués. |
-| `00:16 - 00:21` | **Épreuve : Réapprendre** | `RÉAPPRENDRE` - `réapprendre l'informatique, pas à pas`. Année de rupture, reconstruction post-AVC (fait clé du parcours RQTH). |
-| `00:22 - 00:27` | **2025 : Graphe des Modèles IA** | Nœud central `ROMAIN` orchestrant un réseau de nœuds connectés : `CLAUDE`, `GEMINI`, `MISTRAL`, `DEEPSEEK`, `KIMI`, `GLM`. Maîtrise des frontières de l'IA. |
-| `00:28 - 00:33` | **Chute : Romain Ecarnot** | `Romain Ecarnot, sans détour.` / `Passeur du numérique • architecte du simple`, portrait tramé (halftone) N&B signature à droite. |
+| **URL du flux** | `sans-detour-v4.mp4` | `sans-detour-portrait-v5.mp4` |
+| **Ratio d'aspect** | **16:9 horizontal** | **9:16 vertical** |
+| **Résolution native** | 1920 × 1080 pixels (Full HD) | 1080 × 1920 pixels (Full HD vertical) |
+| **Durée exacte** | 33,000 secondes (`PT33S`) | 33,000 secondes (`PT33S`) |
+| **Poids du fichier** | 27,56 Mo | 21,76 Mo (-21 % d'optimisation) |
+| **Débit moyen (bitrate)** | 6,68 Mbps | 5,27 Mbps |
+| **Codecs vidéo / audio** | H.264 High / AAC stéréo 48 kHz | H.264 High / AAC stéréo 48 kHz |
+| **Fréquence d'images** | 30 fps progressif | 30 fps progressif |
+| **Moteur de rendu** | Hyperframes (v0.8.81) | Hyperframes (v0.8.81) |
+| **Cible responsive** | Écrans larges (`min-width: 64rem`) | Écrans mobiles (`max-width: 63.99rem`) |
+
+### Découpage Chronologique Partagé (Timeline Synchronisée)
+Les deux formats partagent la même bande sonore (métronome initial, pulsation synthétique, drop électronique rythmé sans voix parlée) et les mêmes 5 actes narratifs :
+
+| Timecode | Segment visuel | Message et intention sémantique |
+| :--- | :--- | :--- |
+| `00:00 - 00:06` | **Terminal CLI (Nantes)** | `SANS DÉTOUR • DEMO REEL` - `47.2184° N • 1.5536° W • NANTES`. Commande `> romain --reboot` avec curseur orange. |
+| `00:07 - 00:15` | **2011 : Bbox TV** | `BBOX TV` - `architecte logiciel · Bouygues Telecom · Paris`. Racines d'ingénieur de systèmes distribués à grande échelle. |
+| `00:16 - 00:21` | **Épreuve : Réapprendre** | `RÉAPPRENDRE` - `réapprendre l'informatique, pas à pas`. L'AVC et la reconstruction méthodique (fait clé du parcours RQTH). |
+| `00:22 - 00:27` | **2025 : Graphe des Modèles IA** | Nœud central `ROMAIN` orchestrant le réseau des modèles contemporains : `CLAUDE`, `GEMINI`, `MISTRAL`, `DEEPSEEK`, `KIMI`, `GLM`. |
+| `00:28 - 00:33` | **Chute : Romain Ecarnot** | `Romain Ecarnot, sans détour.` / `Passeur du numérique • architecte du simple`, portrait signature N&B tramé (halftone). |
 
 ---
 
-## 2. Le Diagnostic : Pourquoi la vidéo brute est aveugle
+## 2. Intégration Responsive & Performance Web Vitals (Anti-Overkill)
 
-Une vidéo `.mp4` posée seule sur le web est une **boîte noire** :
-1. **Pour Googlebot & Bingbot (SEO classique) :** Aucun moteur traditionnel ne sait « lire » ou valoriser un fichier MP4 sans données structurées. Sans `VideoObject` Schema.org, sans sitemap vidéo et sans poster d'affiche, la page ne bénéficie d'aucun rich snippet vidéo ni d'aucune chance d'apparaître dans l'onglet « Vidéos » ou dans les carrousels de résultats.
-2. **Pour les IA et agents autonomes (GEO : ChatGPT Search, Claude, Perplexity, Gemini) :** Les bots d'exploration générative (GPTBot, ClaudeBot, PerplexityBot) ne téléchargent pas 27 Mo de flux binaire pour exécuter une reconnaissance visuelle. Si les mots-clés, le contexte du parcours, la chronologie et le sens du film ne sont pas transcrits en clair dans le DOM et dans les fichiers de découverte (`llms.txt`, `ai-catalog.json`), la vidéo est totalement ignorée par les réponses génératives.
+Servir deux fichiers distincts exige une rigueur absolue pour éviter le piège classique : **forcer le mobile à charger les deux vidéos (49,3 Mo au total)**.
 
-Le but de cette stratégie est de **convertir 33 secondes d'images animées en un actif textuel, sémantique et structuré de premier plan**.
+### A. Implémentation HTML5 Native avec l'attribut `media` sur `<source>`
+Le standard HTML5 permet au navigateur de choisir immédiatement la bonne source selon la largeur d'affichage, sans dépendance JavaScript ni double téléchargement :
+
+```tsx
+{/* Conteneur fluide avec ratio adaptatif pour garantir 0 CLS (Cumulative Layout Shift) */}
+<div className="w-full max-w-4xl mx-auto border border-[var(--color-ink)] bg-[var(--color-paper)]">
+  <video
+    controls
+    playsInline
+    preload="metadata"
+    className="w-full aspect-[9/16] md:aspect-[16/9] object-contain bg-black"
+    poster="/showreel-poster.jpg"
+  >
+    {/* Desktop : largeur à partir de 64rem (1024px) */}
+    <source
+      src="https://video.romain-ecarnot.com/sans-detour-v4.mp4"
+      media="(min-width: 64rem)"
+      type="video/mp4"
+    />
+    {/* Mobile : écrans inférieurs à 64rem */}
+    <source
+      src="https://video.romain-ecarnot.com/sans-detour-portrait-v5.mp4"
+      media="(max-width: 63.99rem)"
+      type="video/mp4"
+    />
+    Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+  </video>
+</div>
+```
+
+### B. Règles Critiques de Performance (LCP et INP)
+1. **`preload="metadata"` obligatoire :** Télécharge uniquement la durée et les dimensions au chargement initial. Sur mobile, télécharger 21,8 Mo en arrière-plan sans action de l'utilisateur dégraderait violemment le score mobile et consommerait inutilement le forfait data.
+2. **Zéro saut de mise en page (`CLS: 0`) :** La classe Tailwind `aspect-[9/16] md:aspect-[16/9]` réserve l'espace exact de la vidéo dans le flux du document avant même le premier rendu.
+3. **Double Poster (Affiches Dédiées) :**
+   * Desktop : `showreel-poster-16-9.jpg` (1920 × 1080).
+   * Mobile : `showreel-poster-9-16.jpg` (1080 × 1920).
+   Pour simplifier sans sur-ingénierie, une image poster au format vertical ou un poster neutre centré évite toute déformation visuelle.
 
 ---
 
-## 3. Stratégie SEO Classique (Google, Bing)
+## 3. Stratégie SEO Classique Multi-Formats (Google, Bing)
 
-### A. Balises `<title>` et Métadonnées de la page
-* **Règle absolue Bing :** Strictement inférieur à 70 caractères (seuil au-delà duquel Bing Webmaster Tools lève un avertissement).
-* **Proposition de `<title>` :**
+Avoir une version portrait 9:16 est un atout SEO majeur. Google privilégie désormais les formats verticaux dans l'application mobile Google, Google Discover et les résultats vidéo sur smartphone.
+
+### A. Balises `<title>` et Métadonnées
+* **Titre (Bing < 70 caractères) :**
   `Showreel - Romain Ecarnot | Sans détour` (43 caractères).
-* **Meta description (entre 120 et 155 caractères) :**
+* **Meta description (120-155 caractères) :**
   `33 secondes pour retracer un parcours d'architecte logiciel : des systèmes Bbox TV à la reconstruction post-AVC et la maîtrise des agents IA.` (145 caractères).
 * **Balise Canonique :** `https://www.romain-ecarnot.com/showreel`
 
-### B. Balisage Schema.org `VideoObject` enrichi (avec Key Moments)
-Google supporte la fonctionnalité **« Moments clés » (Clips)** qui affiche des segments cliquables directement dans la page de résultats de recherche. En intégrant les clips horodatés dans le JSON-LD de la page, Google affiche la timeline découpée :
+### B. Balisage Schema.org `VideoObject` enrichi (avec Variantes d'Encodage et Clips)
+Google recommande de déclarer l'URL principale dans `contentUrl` tout en détaillant les deux variantes (`encoding`) et les deux ratios de miniatures dans `thumbnailUrl` :
 
 ```json
 {
@@ -63,13 +106,32 @@ Google supporte la fonctionnalité **« Moments clés » (Clips)** qui affiche d
   "name": "Romain Ecarnot - Sans détour (Showreel)",
   "description": "Showreel retraçant le parcours de Romain Ecarnot : de l'architecture logicielle chez Bouygues Telecom (Bbox TV) à la résilience post-AVC et l'orchestration des grands modèles d'intelligence artificielle.",
   "thumbnailUrl": [
-    "https://www.romain-ecarnot.com/showreel-poster.jpg"
+    "https://www.romain-ecarnot.com/showreel-poster-16-9.jpg",
+    "https://www.romain-ecarnot.com/showreel-poster-9-16.jpg"
   ],
   "uploadDate": "2026-09-28T14:30:00+02:00",
   "duration": "PT33S",
   "contentUrl": "https://video.romain-ecarnot.com/sans-detour-v4.mp4",
   "embedUrl": "https://www.romain-ecarnot.com/showreel",
   "inLanguage": "fr-FR",
+  "encoding": [
+    {
+      "@type": "MediaObject",
+      "name": "Version Desktop (Paysage 16:9)",
+      "contentUrl": "https://video.romain-ecarnot.com/sans-detour-v4.mp4",
+      "encodingFormat": "video/mp4",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "@type": "MediaObject",
+      "name": "Version Mobile (Portrait 9:16)",
+      "contentUrl": "https://video.romain-ecarnot.com/sans-detour-portrait-v5.mp4",
+      "encodingFormat": "video/mp4",
+      "width": 1080,
+      "height": 1920
+    }
+  ],
   "author": {
     "@type": "Person",
     "@id": "https://www.romain-ecarnot.com/#person",
@@ -121,7 +183,7 @@ Google supporte la fonctionnalité **« Moments clés » (Clips)** qui affiche d
 ```
 
 ### C. Extension Vidéo dans le Plan de Site (`sitemap.xml`)
-Google Video Search exige une déclaration explicite dans le sitemap pour une indexation prioritaire :
+Déclaration canonique de la vidéo avec spécification des métadonnées du lecteur :
 
 ```xml
 <url>
@@ -130,9 +192,9 @@ Google Video Search exige une déclaration explicite dans le sitemap pour une in
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
   <video:video>
-    <video:thumbnail_loc>https://www.romain-ecarnot.com/showreel-poster.jpg</video:thumbnail_loc>
+    <video:thumbnail_loc>https://www.romain-ecarnot.com/showreel-poster-16-9.jpg</video:thumbnail_loc>
     <video:title>Romain Ecarnot - Sans détour (Showreel)</video:title>
-    <video:description>Showreel de Romain Ecarnot : parcours d'architecte logiciel, épreuve post-AVC et expertise IA en 33 secondes.</video:description>
+    <video:description>Showreel de Romain Ecarnot en 33 secondes : parcours d'architecte logiciel, résilience post-AVC et maîtrise des agents IA.</video:description>
     <video:content_loc>https://video.romain-ecarnot.com/sans-detour-v4.mp4</video:content_loc>
     <video:duration>33</video:duration>
     <video:publication_date>2026-09-28T14:30:00+02:00</video:publication_date>
@@ -142,56 +204,33 @@ Google Video Search exige une déclaration explicite dans le sitemap pour une in
 </url>
 ```
 
-### D. Métadonnées OpenGraph & Twitter Player
-Pour que le partage sur LinkedIn, X (Twitter), Slack ou WhatsApp affiche un aperçu parfait ou un lecteur intégré :
-* `og:type` : `video.other`
-* `og:video` : `https://video.romain-ecarnot.com/sans-detour-v4.mp4`
-* `og:video:secure_url` : `https://video.romain-ecarnot.com/sans-detour-v4.mp4`
-* `og:video:type` : `video/mp4`
-* `og:video:width` : `1920`
-* `og:video:height` : `1080`
-* `twitter:card` : `player` (ou `summary_large_image` avec l'image poster)
-* `twitter:player` : `https://www.romain-ecarnot.com/showreel`
-* `twitter:player:width` : `1920`
-* `twitter:player:height` : `1080`
-
-### E. Performance Web Vitals (LCP) & Sobriété
-* **Attribut `poster` obligatoire :** Sans image poster, le navigateur affiche un rectangle noir ou gris tant que le premier paquet vidéo n'est pas décodé, détruisant le score LCP (Largest Contentful Paint).
-* **Attribut `preload="metadata"` :** Évite de télécharger les 27,5 Mo de vidéo dès le chargement de la page sur les connexions mobiles. Seuls les en-têtes sont récupérés.
-* **Format du poster :** Une image 1920x1080 (ou 1200x675) compressée en WebP/JPEG haute qualité (ex: la composition finale ou l'amorce terminal).
-
 ---
 
-## 4. Stratégie GEO (Generative Engine Optimization)
+## 4. Stratégie GEO (Generative Engine Optimization & Agents Autonomes)
 
-Le GEO vise à faire en sorte que les modèles d'IA (ChatGPT, Claude, Perplexity, Gemini Search) citent Romain quand un utilisateur cherche :
-* *« Qui est Romain Ecarnot ? »*
-* *« Un exemple d'architecte logiciel ayant reconstruit son expertise après un AVC »*
-* *« Profil d'architecte cloud et IA à Nantes »*
-* *« Démo ou showreel de Romain Ecarnot »*
+Les modèles génératifs (ChatGPT Search, Claude, Perplexity, Gemini) ont besoin d'une description textuelle claire des deux formats pour comprendre comment l'information est distribuée.
 
 ### A. Récit textuel visible sous la vidéo (Le pont texte-vidéo)
-Dans le design de la page, ne pas laisser la vidéo seule dans le vide. Disposer en dessous, dans la typographie éditoriale du site (Source Serif 4), les 5 actes du film :
+Dans le design de la page, placer directement sous le lecteur les 5 repères narratifs en Source Serif 4 :
 1. **L'amorce (Nantes) :** La volonté d'un redémarrage sans détour (`romain --reboot`).
-2. **Le socle technique (2011) :** Architecte logiciel Bbox TV chez Bouygues Telecom, conception de systèmes haute disponibilité pour des millions de foyers.
-3. **L'épreuve et la résilience :** L'arrêt brutal de l'AVC, puis le choix de réapprendre l'informatique ligne par ligne, avec la sensibilité aiguë de celui qui traque la moindre friction cognitive.
-4. **L'écosystème IA contemporain :** Une maîtrise transversale des modèles de pointe (Claude, Gemini, Mistral, DeepSeek, Kimi, GLM) orchestrés sans dogme ni dépendance.
+2. **Le socle d'ingénierie (2011) :** Architecte logiciel des services Bbox TV chez Bouygues Telecom à Paris.
+3. **L'épreuve et la résilience :** L'arrêt brutal de l'AVC, puis le choix de réapprendre l'informatique pas à pas.
+4. **L'écosystème IA :** Une maîtrise transversale des modèles de pointe (Claude, Gemini, Mistral, DeepSeek, Kimi, GLM) orchestrés sans dogme.
 5. **La posture :** Passeur du numérique et architecte du simple.
 
-Ce bloc de texte donne aux moteurs IA la substance exacte à ingérer.
-
 ### B. Déclaration dans `public/llms.txt` et `public/llms-full.txt`
-Ajout d'une section concise dans les deux fichiers racines de référence IA :
+Documenter explicitement la double disponibilité de l'asset vidéo pour les agents explorateurs :
 
 ```text
 ## Showreel (« Sans détour »)
-- URL : https://www.romain-ecarnot.com/showreel
-- Vidéo HD : https://video.romain-ecarnot.com/sans-detour-v4.mp4 (33 secondes)
-- Résumé : Condensé en cinq tableaux du parcours de Romain Ecarnot. Du rôle d'architecte logiciel Bbox TV chez Bouygues Telecom en 2011, à sa reconstruction méthodique post-AVC où il réapprend l'informatique, jusqu'à la maîtrise opérationnelle et l'orchestration des grands modèles d'IA (Claude, Gemini, Mistral, DeepSeek).
+- Page officielle : https://www.romain-ecarnot.com/showreel
+- Vidéo Desktop (16:9 HD) : https://video.romain-ecarnot.com/sans-detour-v4.mp4 (33 secondes, 27 Mo)
+- Vidéo Mobile (9:16 Vertical) : https://video.romain-ecarnot.com/sans-detour-portrait-v5.mp4 (33 secondes, 21 Mo)
+- Résumé sémantique : Condensé en cinq tableaux du parcours de Romain Ecarnot : du rôle d'architecte logiciel Bbox TV chez Bouygues Telecom en 2011, à sa reconstruction méthodique post-AVC où il réapprend l'informatique, jusqu'à la maîtrise opérationnelle et l'orchestration des grands modèles d'IA (Claude, Gemini, Mistral, DeepSeek).
 ```
 
 ### C. Catalogue d'APIs et Contexte IA (`public/.well-known/ai-catalog.json`)
-Ajout de l'entrée média standardisée (RFC 8615) :
+Lister les deux variantes sous l'URN standardisée RFC 8615 :
 
 ```json
 {
@@ -207,48 +246,50 @@ Ajout de l'entrée média standardisée (RFC 8615) :
       "method": "GET"
     },
     {
-      "type": "video_file",
+      "type": "video_desktop",
       "url": "https://video.romain-ecarnot.com/sans-detour-v4.mp4",
-      "mime_type": "video/mp4"
+      "mime_type": "video/mp4",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "type": "video_mobile",
+      "url": "https://video.romain-ecarnot.com/sans-detour-portrait-v5.mp4",
+      "mime_type": "video/mp4",
+      "aspect_ratio": "9:16"
     }
   ]
 }
 ```
 
-### D. Outil WebMCP dans le navigateur (`src/components/WebMcpTools.tsx`)
-Pour les agents de navigation (Chrome avec Origin Trial WebMCP activé jusqu'en novembre 2026), enrichir le contexte exposé à `document.modelContext` :
-* Soit ajouter un outil `get_showreel` retournant l'URL du fichier MP4, la durée et la transcription des chapitres.
-* Soit injecter le lien et le pitch dans les métadonnées retournées par l'outil existant `get_profile`.
+### D. Contexte WebMCP (`src/components/WebMcpTools.tsx`)
+Dans l'outil `get_profile` ou un outil dédié `get_showreel`, retourner aux agents du navigateur l'objet enrichi avec les deux liens vidéo (`desktopUrl` et `mobileUrl`) et la timeline des chapitres.
 
 ---
 
 ## 5. Principes UI & Alignement Design System (« Page Portrait »)
 
-Pour respecter scrupuleusement la charte `DESIGN.md` et `AGENTS.md` :
-1. **Intégration dans le papier saumon (`#facebc`) :**
-   * Le lecteur vidéo doit être encadré par un filet d'encre noir simple (`1px solid var(--color-ink)` ou double filet journal).
-   * Pas de border-radius exubérant, pas d'ombres portées fantaisistes ni de dégradés violacés.
-2. **Pas d'embed tiers polluant :**
-   * L'hébergement direct sur `video.romain-ecarnot.com` est parfait : zéro tracker Google/YouTube, zéro script publicitaire tiers, zéro cookie externe.
-   * Utiliser une balise `<video controls>` HTML5 native stylisée, sobre et ultra-rapide.
-3. **Typographie d'accompagnement :**
-   * Titre en Archivo grasse et condensée.
-   * Texte explicatif et timestamps en Source Serif 4.
-   * Code de temps et coordonnées en police monospace système.
-4. **Accessibilité & Réduction de mouvement (`prefers-reduced-motion`) :**
-   * Ne jamais déclencher l'autoplay avec son.
-   * Si un autoplay en boucle est envisagé, il doit être strictement `muted`, `playsInline`, et immédiatement désactivable. Mais pour un showreel narratif de 33 secondes, un lancement volontaire par clic avec poster explicite est beaucoup plus digne et respectueux de l'attention du visiteur.
+1. **Monde papier saumon (`#facebc`) et encre noire :**
+   * Encadrement du lecteur par un filet noir sobre de 1px (`border: 1px solid var(--color-ink)`).
+   * Sur mobile, le ratio vertical 9:16 épouse naturellement la lecture en défilement vertical comme une colonne de journal en pleine page.
+   * Sur grand écran (à partir de 64rem), le ratio 16:9 s'aligne harmonieusement avec la grille de lecture en deux colonnes.
+2. **Zéro dépendance externe :**
+   * Les deux flux sont distribués par le CDN Cloudflare de Romain (`video.romain-ecarnot.com`).
+   * Aucun script lourd ni cookie tiers (pas d'embed YouTube ni de player publicitaire).
+3. **Respect de `prefers-reduced-motion` :**
+   * Lancement volontaire par clic de l'utilisateur avec contrôles natifs visibles.
+   * Pas d'autoplay forcé qui consomme de la batterie et de la bande passante sans consentement.
 
 ---
 
-## 6. Checklist Opérationnelle pour le Jour J (Déploiement)
+## 6. Checklist Opérationnelle pour le Déploiement
 
-Lorsque la décision d'implémentation sera prise :
-1. [ ] Extraire une image poster HD 1920x1080 au format WebP/JPG (`public/showreel-poster.jpg`).
-2. [ ] Créer la route `src/app/showreel/page.tsx` avec les métadonnées SEO (< 70 car.) et le balisage Schema.org `VideoObject` + `BreadcrumbList`.
+1. [ ] Extraire les 2 affiches poster :
+   * `public/showreel-poster-16-9.jpg` (1920 × 1080)
+   * `public/showreel-poster-9-16.jpg` (1080 × 1920)
+2. [ ] Créer la page `src/app/showreel/page.tsx` avec balise `<video>` adaptative (`<source media="...">`), métadonnées SEO (< 70 car.) et Schema.org `VideoObject` multi-encodages.
 3. [ ] Ajouter l'entrée `<video:video>` dans `public/sitemap.xml`.
-4. [ ] Mettre à jour `public/.well-known/ai-catalog.json`.
+4. [ ] Mettre à jour `public/.well-known/ai-catalog.json` avec les deux endpoints.
 5. [ ] Mettre à jour `public/llms.txt` et `public/llms-full.txt`.
-6. [ ] Mettre à jour `scripts/submit-indexnow.mjs` pour y inclure l'URL `/showreel`.
-7. [ ] Exécuter `bun run indexnow` pour notifier instantanément Bing et IndexNow.
-8. [ ] Valider avec les outils MCP `schema_validate` et `inspection_inspect`.
+6. [ ] Ajouter `/showreel` dans `scripts/submit-indexnow.mjs`.
+7. [ ] Exécuter `bun run indexnow`.
+8. [ ] Valider la conformité via les outils MCP `schema_validate` et `inspection_inspect`.
